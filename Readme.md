@@ -14,11 +14,11 @@ src
 ----vendor  
 ----main.js  
 --svg  
---jade
-----parts
-----components
---data
-----data.json
+--jade  
+----parts  
+----components  
+--data  
+----data.json  
 
 В результате сборки генерируется папка build и html-страницы в корне
 build  
