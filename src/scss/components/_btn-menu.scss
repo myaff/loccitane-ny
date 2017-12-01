@@ -1,0 +1,70 @@
+.btn-menu {
+  position: relative;
+  @include circle(70px);
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  background: $color--primary;
+  color: $color--base;
+  display: block;
+  z-index: $z-index--modal - 10;
+  
+  &::before {
+    content: '';
+    display: block;
+    @include circle(100%);
+    background: inherit;
+    transform-origin: center;
+    opacity: 0.3;
+    transition: none;
+  }
+  &:hover::before {
+    opacity: 0;
+    transform: scale(2);
+    transition: all 0.5s;
+  }
+  
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: none;
+  }
+  
+  &__wrapper {
+    line-height: 1;
+    margin: -5px 0 -15px;
+  }
+  
+  div {
+    @include size(2rem, 3px);
+    @include absolute(top 50% left 50%);
+    margin-left: -1rem;
+    background: currentColor;
+    transform-origin: center;
+    transition: transform 0.3s;
+    
+    &:first-of-type {
+      transform: translateY(-12px);
+    }
+    &:last-of-type {
+      transform: translateY(12px);
+    }
+  }
+  
+  &.modal-is-opened {
+    z-index: $z-index--modal + 10;
+    div:first-of-type {
+      transform: translateY(0) scaleX(1.3) rotate(40deg);
+    }
+    div:nth-of-type(2) {
+      transform: scaleX(0);
+    }
+    div:last-of-type {
+      transform: translateY(0) scaleX(1.3) rotate(-40deg);
+    }
+  }
+  
+}

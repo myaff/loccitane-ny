@@ -1,0 +1,152 @@
+$field-input-color: $color--base;
+$field-input-bg: white;
+$field-text-color: $color--base;
+$field-input-placeholder-color: #5d5d5d;
+$field-input-border-color: $color--base;
+
+$error-color: red;
+
+$checkbox-size: 1.25rem;
+$checkbox-color: $field-input-color;
+$checkbox-bg: $field-input-bg;
+
+.field {
+  display: inline-block;
+  margin-bottom: $spacer;
+  
+  &--fullwidth {
+    display: block;
+    width: 100%;
+    
+    & + .field {
+      margin-left: 0;
+    }
+  }
+  
+  &__label {
+    display: block;
+    position: relative;
+  }
+  
+  &__input {
+    display: block;
+    @include size(100%, 50px);
+    padding: 0.75rem 1.5rem;
+    box-sizing: border-box;
+    min-width: 320px;
+    
+    border: 1px solid $field-input-border-color;
+    color: $field-input-color;
+    background: $field-input-bg;
+    
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+    
+    .field.has-error & {
+      border-color: $error-color;
+    }
+  }
+  &__input,
+  &__placeholder {
+    font: #{$font-size--big} / 1.5rem $font--base;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  &__placeholder {
+    @include absolute(top 0.75rem left 0);
+    width: 100%;
+    cursor: text;
+    opacity: 1;
+    transition: opacity 0.2s;
+    font-style: italic;
+    color: $field-input-placeholder-color;
+    
+    .has-focus &,
+    .has-value & {
+      opacity: 0;
+    }
+  }
+  
+  &__label-text {
+    font-size: $font-size--base;
+    color: $field-text-color;
+  }
+  
+  &__label--check &__label-text {
+    padding-left: $checkbox-size + 1rem;
+  }
+  
+  &__check {
+    display: none;
+  }
+  
+  &__check ~ &__label-text {
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      @include size($checkbox-size);
+      @include absolute(top 0 left 0);
+      cursor: pointer;
+    }
+    
+    &::before {
+      background: $checkbox-bg;
+      border: 1px solid $field-input-border-color;
+      
+      .field.has-error & {
+        border-color: $error-color;
+      }
+    }
+    
+    &::after {
+      //background: url('../img/tick.png') center no-repeat;
+      content: '\1F5F8';
+      text-align: center;
+      font-size: 2em;
+      line-height: 0.75;
+      font-weight: bold;
+      transition: opacity 0.2s;
+      opacity: 0;
+    }
+  }
+  
+  &__check:checked ~ &__label-text::after {
+    opacity: 1;
+  }
+  
+}
+
+.gift-form {
+  .modal &__title {
+    max-width: 400px;
+    letter-spacing: 0.05em;
+    margin: 0 auto;
+  }
+  &__form {
+    height: 270px;
+    transition: opacity 0.3s 0.2s, height 0.3s;
+  }
+  .is-submitted &__form {
+    opacity: 0;
+    height: 200px;
+    transition: opacity 0.3s, height 0.3s 0.2s;
+  }
+  &__result {
+    @include absolute(top 0 left 0);
+    @include size(100%, auto);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s, z-index 0.1s 0.3s;
+  }
+  .is-submitted &__result {
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 0.3s 0.1s, z-index 0.1s 0.3s;
+  }
+}

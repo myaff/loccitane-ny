@@ -1,0 +1,20 @@
+svg {
+	display: inline-block;
+	@include size(1em);
+	color: inherit;
+	
+	use {
+		fill: currentColor;
+		color: inherit;
+	}
+	
+	&.no-fill use {
+		fill: none;
+		stroke: currentColor;
+		
+	}
+	&.stroke-2 use {
+		stroke-width: 2;
+		stroke: currentColor;
+	}
+}

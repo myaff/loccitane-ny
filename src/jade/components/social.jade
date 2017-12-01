@@ -1,0 +1,10 @@
+mixin social(isInline, hasTitle)
+  .social(class=isInline ? "social--inline")
+  if hasTitle
+    .social__title Поделитьcя
+  if isInline && hasTitle
+    .social__delimiter
+  each item in socials
+    a.social__link(href="#", target="_blank", data-type="#{item.type}")
+      svg.icon.social__icon: use(xlink:href="#{item.icon}")/
+      span.social__text= item.text

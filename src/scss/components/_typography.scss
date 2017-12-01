@@ -1,0 +1,462 @@
+p {
+  margin: 2rem 0;
+  @include null-first-last-margin();
+}
+
+[class*="tp-heading"] {
+  color: $color--heading;
+}
+.tp-heading {
+  &--monstrous {
+    font-size: $font-size--monstrous;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    .layout--landing & {
+      @media #{$flow-height-landing} {
+        font-size: $font-size--monstrous/1080px*100vh;
+      }
+    }
+    .layout--test &,
+    .layout--home & {
+      @media #{$flow-height} {
+        font-size: $font-size--monstrous/1080px*100vh;
+      }
+    }
+  }
+  &--huge {
+    font-size: $font-size--huge;
+    line-height: 1.1;
+    font-family: $font--accent;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    
+    .layout--landing & {
+      @media #{$flow-height-landing} {
+        font-size: $font-size--huge/1080px*100vh;
+      }
+    }
+    .layout--test &,
+    .layout--home & {
+      @media #{$flow-height} {
+        font-size: $font-size--huge/1080px*100vh;
+      }
+    }
+    
+  }
+  &--large {
+    @include heading {
+      font-size: $font-size--large;
+      font-weight: 800;
+      line-height: 1.83;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      
+      .layout--landing & {
+        @media #{$flow-height-landing} {
+          font-size: $font-size--large/1080px*100vh;
+        }
+      }
+      .layout--test &,
+      .layout--home & {
+        @media #{$flow-height} {
+          font-size: $font-size--large/1080px*100vh;
+        }
+      }
+    }
+  }
+  &--big {
+    @include heading {
+      font-size: $font-size--big;
+      font-weight: 800;
+    
+      .layout--landing & {
+        @media #{$flow-height-landing} {
+          font-size: $font-size--big/1080px*100vh;
+        }
+      }
+      .layout--test &,
+      .layout--home & {
+        @media #{$flow-height} {
+          font-size: $font-size--big/1080px*100vh;
+        }
+      }
+    }
+  }
+  &--bigger {
+    @include heading {
+      font-size: $font-size--bigger;
+      line-height: 1.4;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      text-transform: uppercase;
+    
+      .layout--landing & {
+        @media #{$flow-height-landing} {
+          font-size: $font-size--bigger/1080px*100vh;
+        }
+      }
+      .layout--test &,
+      .layout--home & {
+        @media #{$flow-height} {
+          font-size: $font-size--bigger/1080px*100vh;
+        }
+      }
+    }
+  }
+  &--bigger-2 {
+    @include heading {
+      font-size: $font-size--bigger-2;
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    
+      .layout--landing & {
+        @media #{$flow-height-landing} {
+          font-size: $font-size--bigger-2/1080px*100vh;
+        }
+      }
+      .layout--test &,
+      .layout--home & {
+        @media #{$flow-height} {
+          font-size: $font-size--bigger-2/1080px*100vh;
+        }
+      }
+    }
+  }
+  &--medium {
+    @include heading {
+      font-size: $font-size--medium;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      
+      .layout--landing & {
+        @media #{$flow-height-landing} {
+          font-size: $font-size--medium/1080px*100vh;
+        }
+      }
+      .layout--test &,
+      .layout--home & {
+        @media #{$flow-height} {
+          font-size: $font-size--medium/1080px*100vh;
+        }
+      }
+    }
+  }
+}
+
+.tp-body {
+  &--large {
+    font-size: $font-size--large;
+    line-height: 1.2;
+    
+    .layout--landing & {
+      @media #{$flow-height-landing} {
+        font-size: $font-size--large/1080px*100vh;
+      }
+    }
+    .layout--test &,
+    .layout--home & {
+      @media #{$flow-height} {
+        font-size: $font-size--large/1080px*100vh;
+      }
+    }
+  }
+  &--bigger-2 {
+    font-size: $font-size--bigger-2;
+    line-height: 1.36;
+    
+    .layout--landing & {
+      @media #{$flow-height-landing} {
+        font-size: $font-size--bigger-2/1080px*100vh;
+      }
+    }
+    .layout--test &,
+    .layout--home & {
+      @media #{$flow-height} {
+        font-size: $font-size--bigger-2/1080px*100vh;
+      }
+    }
+  }
+  &--bigger {
+    font-size: $font-size--bigger;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    
+    .layout--landing & {
+      @media #{$flow-height-landing} {
+        font-size: $font-size--bigger/1080px*100vh;
+      }
+    }
+    .layout--test &,
+    .layout--home & {
+      @media #{$flow-height} {
+        font-size: $font-size--bigger/1080px*100vh;
+      }
+    }
+  }
+  &--big {
+    font-size: $font-size--big;
+    line-height: 1.67;
+    
+    .layout--landing & {
+      @media #{$flow-height-landing} {
+        font-size: $font-size--big/1080px*100vh;
+      }
+    }
+    .layout--test &,
+    .layout--home & {
+      @media #{$flow-height} {
+        font-size: $font-size--big/1080px*100vh;
+      }
+    }
+  }
+  &--medium {
+    font-size: $font-size--medium;
+    letter-spacing: 3.6px;
+    color: $color--heading;
+    line-height: 1.7;
+    
+    .layout--landing & {
+      @media #{$flow-height-landing} {
+        font-size: $font-size--medium/1080px*100vh;
+      }
+    }
+    .layout--test &,
+    .layout--home & {
+      @media #{$flow-height} {
+        font-size: $font-size--medium/1080px*100vh;
+      }
+    }
+  }
+  &--base {
+    font-size: $font-size--base;
+    
+    .layout--landing & {
+      @media #{$flow-height-landing} {
+        font-size: $font-size--base/1080px*100vh;
+      }
+    }
+    .layout--test &,
+    .layout--home & {
+      @media #{$flow-height} {
+        font-size: $font-size--base/1080px*100vh;
+      }
+    }
+  }
+  &--main {
+    font-size: $font-size--main;
+    line-height: 1.47;
+    
+    .layout--landing & {
+      @media #{$flow-height-landing} {
+        font-size: $font-size--main/1080px*100vh;
+      }
+    }
+    .layout--test &,
+    .layout--home & {
+      @media #{$flow-height} {
+        font-size: $font-size--main/1080px*100vh;
+      }
+    }
+  }
+  &--small {
+    font-size: $font-size--small;
+    letter-spacing: 2px;
+  }
+  
+}
+
+
+.tp-text {
+  @each $align in (left, right, center) {
+    &--#{$align} {
+      text-align: $align;
+    }
+  }
+}
+
+.tp {
+  &--uc {
+    text-transform: uppercase;
+  }
+  &--lc {
+    text-transform: lowercase;
+  }
+  &--accent {
+    font-family: $font--accent;
+  }
+}
+
+.l-block {
+  @each $align in (left, right) {
+    &--#{$align} {
+      float: $align;
+    }
+  }
+  &--center {
+    margin: 0 auto;
+  }
+}
+
+.img-wrapper {
+  width: 34.325rem;
+  
+  @media #{$md-landing} {
+    width: 47.73vw;
+  }
+  
+  
+  &--big {
+    width: 38.75rem;
+    
+    @media #{$md-landing} {
+      width: 53.88vw;
+    }
+  }
+  &, &--big {
+    @media #{$xs} {
+      width: 100vw;
+      margin-left: calc(-1 * (100vw - 100%) / 2);
+      margin-right: calc(-1 * (100vw - 100%) / 2);
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+b, strong {
+  font-weight: 600;
+}
+em, i {
+  font-style: italic;
+}
+.highlight {
+  font: bold #{$font-size--bigger}/1 $font--accent;
+  @media #{$xs} {
+    font-size: 8.13vw;
+    line-height: 1.2;
+  }
+}
+
+blockquote {
+  font: #{$font-size--large}/1.5 $font--accent;
+  text-align: center;
+  margin: 0;
+  max-width: 37.5rem;
+  
+  @media #{$md-landing} {
+    max-width: 52.15vw;
+    font-size: 2.725vw;
+  }
+  @media #{$xs} {
+    max-width: 100%;
+    font-size: 9.38vw;
+  }
+  
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    @include size(3.125rem, 2.5rem);
+    margin: 0.5rem auto;
+    background: url('../img/quotes.svg') center no-repeat;
+    background-size: contain;
+  }
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  blockquote::before, blockquote::after{
+    @include size(3.225rem, 2.5rem);
+  }
+}
+
+@media all and (-ms-high-contrast:none){
+  blockquote::before, blockquote::after{
+    @include size(3.225rem, 2.5rem);
+  }
+  *::-ms-backdrop, blockquote::before, blockquote::after{
+    @include size(3.225rem, 2.5rem);
+  }
+}
+
+.image-block {
+  img {
+    position: relative;
+    max-width: 100%;
+    z-index: 1;
+  }
+  
+  &--styled {
+    &::before {
+      content: '';
+      display: block;
+      @include size(156.5%, 0);
+      padding-bottom: 156.5%;
+      //@include absolute(top -160px left -180px);
+      @include absolute(top 0 left 0);
+      margin-top: -35%;
+      margin-left: -41.5%;
+      background: url('../img/el-circle.jpg') top left no-repeat;
+      background-size: contain;
+      z-index: 0;
+    }
+  }
+}
+.text-block {
+  z-index: 1;
+}
+
+.page {
+  &__heading,
+  &__heading-note,
+  &__heading-text {
+    z-index: 3;
+  }
+}
+.gift-block {
+  z-index: 1;
+  border: 1px solid $color--base;
+  
+  &__img {
+    width: 65%;
+    margin: -90px auto -2rem;
+    img {
+      width: 100%;
+    }
+  }
+  &__btn {
+    margin-bottom: -1 * $grid-gutter;
+  }
+}
+
+.story-block {
+  &__img {
+    max-width: 300px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+  &__title {
+    font-weight: 800;
+  }
+}
+
+.primary--text {
+  color: $color--primary;
+}

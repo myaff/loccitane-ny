@@ -1,0 +1,57 @@
+.page {
+  
+  &--home {
+    height: 100vh;
+    
+    @media #{$xs-height} {
+      min-height: calc(100vh - 10.5rem);
+      height: auto;
+    }
+  }
+  
+  &--home .section {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+    &__content {
+      //padding: 150px 0 60px;
+      padding: 13vh 0 5.56vh;
+      background: url('../img/home/bg-circle.jpg') center no-repeat;
+      
+      @media #{$flow-height} {
+        padding: 13.5vh 0 5.56vh;
+      }
+    }
+    &__content,
+    &__bg {
+      @include size(50%, 100%);
+      background-size: cover;
+    }
+    @for $i from 1 through 5 {
+      &--#{$i} .section__bg {
+        background: url('../img/home/bg-#{$i}.jpg') center no-repeat;
+        background-size: cover;
+      }
+    }
+    &__content-inner {
+      display: flex;
+      flex-flow: column nowrap;
+      //justify-content: space-between;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      
+      > .btn {
+        margin-top: 180px;
+        
+        @media #{$flow-height} {
+          margin-top: 16.67vh;
+        }
+        @media #{$sm-height} {
+          margin-top: 13vh;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+//- social
+mixin social(isInline, hasTitle)
+  .social(class=isInline ? "social--inline" : '')
+    if hasTitle
+      .social__title Поделитьcя
+    if isInline && hasTitle
+      .social__delimiter
+    each item in socials
+      a.social__link(href="#", target="_blank", data-type="#{item.type}")
+        svg.icon.social__icon: use(xlink:href="#{item.icon}")/
+        span.social__text= item.text
+
+//- text block
+mixin text-block(title, isStyled, isCentered)
+  .text-block.mb-7(class=isCentered ? 'tp-text--center' : '')
+    .tp-heading--large.mb-2= title
+    if isStyled
+      .tp-body--large.tp--accent
+        block
+    else
+      .tp-body--main
+        block
+
+//- image block
+mixin image-block(src, isStyled)
+  .image-block(class=isStyled ? 'image-block--styled' : '')
+    img.image-block__img(src=src)
+
+//- gift
+mixin gift(img, title, forWhom, link)
+  .gift-block.tp-text--center.px-6
+    .gift-block__img: img(src=img, alt=title)
+    .gift-block__title.tp-body--bigger.tp--accent= title
+    .gift-block__forWhom.tp-heading--large.primary--text.my-2= forWhom
+    if block
+      .gift-block__text.tp-body--main.my-3
+        block
+    if link
+      .gift-block__btn.mt-3: a.btn.btn--dark.btn--medium(href=link, target="_blank") Подробнее
+
+//- other story
+mixin story-block(img, title, link)
+  .story-block.tp-text--center
+    .story-block__title.tp-heading--bigger= title
+    .story-block__img.my-2: img(src=img, alt=title)
+    if link
+      .story-block__btn: a.btn.btn--secondary(href=link) Читать
+
+//- modal
+mixin modal(id, customClass, hasClose, isFullscreen)
+  .modal__wrapper.invisible
+    .modal.invisible(id=id, class=customClass ? customClass : '', data-fullscreen=isFullscreen)
+      if hasClose
+        .btn-close.btn--center.js-modal(data-target="##{id}")
+          svg.icon: use(xlink:href="#close")
+      .modal__content
+        block
+
+//- gift form
+mixin gift-form(id, isInline)
+  - var title = 'Оставьте свой email и получите промокод на подарок от L’Occitane!';
+  - var placeholder = 'Ваш e-mail';
+  - var btnText = 'Получить';
+  - var agreementText = 'Я согласен на обработку своих персональных данных';
+  - var resultText = 'Lorem ipsum dolor sit amet, Aenean commodo ligula eget dolor. Aenean massa!';
+  .gift-form.js-form(class=isInline ? 'gift-form--inline' : '', id=id)
+    if isInline
+      form.gift-form__form.js-form-form
+        .gift-form__title.tp-heading--big= title
+        .gift-form__inline-field
+          .gift-form__field.field.tp-text--left
+            input.field__input(id="#{id}-input", type="email", required)
+            .field__placeholder= placeholder
+          .gift-form__btn: button.btn.btn--dark.js-form-submit= btnText
+        .gift-form__agreement.gift-form__field.field
+          label.field__label.field__label--check(for="#{id}-agreement")
+            input.field__check(id="#{id}-agreement", type="checkbox", required)
+            .field__label-text= agreementText
+      .gift-form__result.js-form-result
+        .gift-form__result-text.tp-body--big.tp--uc: b= resultText
+    else
+      form.gift-form__form.js-form-form
+        .gift-form__title.tp-body--big.tp--uc.my-3: b= title
+        .gift-form__field.field
+          input.field__input(id="#{id}-input", type="email", required)
+          .field__placeholder= placeholder
+        .gift-form__agreement.gift-form__field.field
+          label.field__label.field__label--check(for="#{id}-agreement")
+            input.field__check(id="#{id}-agreement", type="checkbox", required)
+            .field__label-text.tp-body--main= agreementText
+        .gift-form__btn: button.btn.js-form-submit= btnText
+      .gift-form__result.js-form-result
+        .gift-form__title.tp-body--big.tp--uc.mt-3.mb-6: b= resultText
+        .gift-form__result-btn: button.btn.js-modal(data-target="#wanna-gift") Закрыть

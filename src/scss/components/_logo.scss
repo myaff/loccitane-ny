@@ -1,0 +1,68 @@
+.logo {
+
+  display: block;
+  
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    &.logo--loccitane {
+      justify-content: flex-start;
+    }
+    &.logo--elle {
+      justify-content: flex-end;
+    }
+  }
+  
+  &__link {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  &__text {
+    font-size: $font-size--small;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-right: $grid-gutter;
+    white-space: nowrap;
+    
+    @media #{$flow-height} {
+      font-size: 1.2vh;
+    }
+    @media #{$md} {
+      font-size: 1.3vw;
+      margin-right: 1.2vw;
+    }
+  }
+  
+  &__delimiter {
+    @include size(7.5rem, 1px);
+    background: currentColor;
+    margin: 0 1rem;
+    
+    @media #{$md} {
+      width: 10.91vw;
+    }
+    @media #{$xs} {
+      width: 37.5vw;
+      @include absolute(bottom -9.38vw right 28.12vw);
+      margin: 0;
+    }
+  }
+  
+  &--loccitane .logo {
+    @include size(13.75rem, 50px);
+    
+    @media #{$md} {
+      @include size(18vw, 4vw);
+    }
+  }
+  &--elle .logo {
+    @include size(7.5rem, 50px);
+    
+    @media #{$md} {
+      @include size(10vw, 4vw);
+    }
+  }
+  
+}

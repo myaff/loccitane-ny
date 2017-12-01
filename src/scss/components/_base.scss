@@ -1,0 +1,90 @@
+html, body, div, header, footer, section, article {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+html, body {
+  font: #{$font-size--base} / #{$line-height--base} $font--base;
+  color: $color--base;
+  background: $body-bg;
+  @media #{$xs} {
+    background: $body-bg--mobile;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.layout {
+  width: 100vw;
+  .no-touch & {
+    padding-right: $scroll-width;
+  }
+  .no-touch &--home,
+  .no-touch &--test {
+    padding-right: 0;
+  }
+}
+
+.page {
+  //overflow: hidden;
+  //min-width: 64rem;
+  //min-width: 59rem;
+  //min-height: calc(100vh - 12.88rem);
+  
+  &__heading-text {
+    max-width: 34.5em;
+    
+    @media #{$sm-height} {
+      max-width: 38.5rem;
+    }
+  }
+}
+
+.container {
+  @include center-block;
+  width: 100%;
+  max-width: 71.75rem;
+  padding: 0 $grid-gutter;
+  
+  @media #{$md-landing} {
+    padding: 0 2.2vw;
+  }
+  @media #{$xs} {
+    padding: 3.13vw;
+  }
+}
+
+.video {
+  display: block;
+  @include absolute(top 0 left 0);
+  @include size(100%);
+  
+  video {
+    width: 100%;
+  }
+  
+  &__wrapper {
+    @include size(100%, 0);
+    padding-bottom: 1080 / 1920 * 100%;
+  }
+}
+
+.rounded {
+  border-radius: 20px;
+}
+
+.hidden {
+  display: none!important;
+}
+.invisible {
+  visibility: hidden;
+}

@@ -1,0 +1,16 @@
+.footer {
+  padding: 3.125rem;
+  
+  @media #{$sm-height} {
+    padding: 2.125rem;
+  }
+  @media #{$xs} {
+    padding: 0 3.13vw;
+  }
+  
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

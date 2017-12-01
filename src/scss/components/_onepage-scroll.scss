@@ -1,0 +1,113 @@
+html.enabled-onepage-scroll,
+html.enabled-onepage-scroll body {
+  margin: 0;
+  overflow: hidden;
+  transition: opacity 400ms;
+  height: 100%;
+}
+
+html.enabled-onepage-scroll {
+  body, .onepage-wrapper {
+    display: block;
+    position: static;
+    padding: 0;
+    @include size(100%);
+  }
+  .layout {
+    height: 100%;
+  }
+}
+
+.onepage-wrapper {
+  @include size(100%);
+  display: block;
+  position: relative;
+  padding: 0;
+  -webkit-transform-style: preserve-3d;
+  .section {
+    @include size(100%);
+  }
+}
+
+
+.onepage-pagination {
+  @include absolute(top 35% right 50%);
+  z-index: 5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-right: $grid-gutter/2;
+  
+  li {
+    padding: 0;
+    text-align: center;
+    margin: 50px 0;
+    @include null-first-last-margin();
+  }
+  
+  a {
+    display: block;
+    position: relative;
+    @include circle(10px);
+    color: $color--primary;
+    background: currentColor;
+    transition: all 0.2s;
+    overflow: visible;
+    text-decoration: none;
+    
+    
+    &::before {
+      content: '0' attr(data-index);
+      @include absolute(top -5px left -60px);
+      display: block;
+      font-size: $font-size--bigger;
+      line-height: 1;
+    }
+    &::after {
+      content: '';
+      display: block;
+      @include absolute(top 50% right 100%);
+      @include size(30px, 1px);
+      background: currentColor;
+    }
+    &::before,
+    &::after {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    
+    &.active,
+    &:hover {
+      color: $color--base;
+    }
+    &.active {
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
+  overflow: auto;
+}
+
+.disabled-onepage-scroll .onepage-wrapper .section {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+}
+.disabled-onepage-scroll .onepage-wrapper {
+  transform: none !important;
+  min-height: 100%;
+}
+
+
+.disabled-onepage-scroll .onepage-pagination {
+  display: none;
+}
+
+body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
+  position: inherit;
+}

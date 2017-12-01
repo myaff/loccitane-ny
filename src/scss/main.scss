@@ -1,0 +1,30 @@
+@import 'mixins';
+@import 'variables';
+
+@import 'components/fonts';
+@import 'components/grid/gridlex';
+@import 'components/spacing';
+@import 'components/display';
+
+@import 'components/base';
+@import 'components/typography';
+@import 'components/svg-norm';
+@import 'components/form';
+@import 'components/onepage-scroll';
+@import 'components/btn-menu';
+@import 'components/logo';
+@import 'components/social-btns';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/carousel';
+@import 'components/girl';
+@import 'components/button';
+@import 'components/modal';
+@import 'components/nav';
+@import 'components/home-section';
+
+@import 'pages/home';
+@import 'pages/test';
+@import 'pages/landing';
+
+@import 'components/animation';

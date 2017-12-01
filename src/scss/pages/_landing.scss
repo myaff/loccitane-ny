@@ -1,0 +1,31 @@
+.layout--landing {
+  background: url('../img/bg-landing.jpg') top center repeat-y;
+  background-size: contain;
+  padding-top: $header-height;
+}
+.page {
+  &--landing .container {
+    max-width: 1300px;
+  }
+  &--landing &__content {
+    background: #fff url('../img/el-bottom-landing.jpg') bottom center no-repeat;
+    background-size: contain;
+    padding: 75px 12.31% 60px;
+    min-height: calc(100vh - #{$header-height});
+  }
+  &--landing &__top-btn {
+    @include absolute(top -0.5*$grid-gutter left 5rem);
+  }
+}
+
+.page--landing .vr {
+  &-1 {
+    z-index: 2;
+  }
+  &-21 {
+    margin-top: -80px;
+  }
+  &-22 {
+    margin-top: 150px;
+  }
+}

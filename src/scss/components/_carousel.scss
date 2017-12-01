@@ -1,0 +1,105 @@
+@import 'owl.carousel/core';
+@import 'owl.carousel/animate';
+//@import 'owl.carousel/autoheight';
+//@import 'owl.carousel/lazyload';
+//@import 'owl.carousel/video';
+
+$dot-bg: #000000;
+
+.owl-dots {
+  width: 100%;
+  margin: 1.5rem auto 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.owl-dot {
+  @include circle(5px, 50%);
+  margin: 0 1px;
+  padding: 0.25rem;
+  box-sizing: content-box;
+  transition: opacity 0.2s;
+  opacity: 0.15;
+  background: $dot-bg;
+  background-clip: content-box;
+  
+  cursor: pointer;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+  &.active {
+    opacity: 1;
+  }
+  
+}
+
+.owl-nav {
+  @include absolute(top 14vh left 50%);
+  @include size(32.5rem, 2.5rem);
+  display: flex;
+  justify-content: space-between;
+  margin-left: -16.25rem;
+  
+  @media #{$xs-height} {
+    top: 6.5rem;
+  }
+  @media #{$xs} {
+    top: 75vw;
+    width: 96.88vw;
+    height: 12.5vw;
+    margin-left: -48.44vw;
+  }
+}
+.owl-prev,
+.owl-next {
+  @include circle(2.5rem, 50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: opacity 0.2s;
+  
+  @media #{$sm-height} {
+    @include size(2rem);
+  }
+  @media #{$xs} {
+    @include size(12.5vw);
+    &::before {
+      content: '';
+      display: block;
+      @include circle(10.5vw);
+      background: $body-bg--mobile;
+      @include absolute(top 1vw left 1vw);
+    }
+    &::after {
+      content: '';
+      @include circle(100%);
+      @include absolute(top 0 left 0);
+    }
+  }
+  
+  &.disabled {
+    opacity: 0.15;
+    cursor: default!important;
+  }
+}
+@each $dir in (prev, next) {
+  .owl-#{$dir} {
+    &, &::after {
+      background-image: url('../img/arrow-#{$dir}.svg');
+      background-size: contain;
+    }
+  }
+}
+
+.carousel {
+  &--girls {
+    max-width: 35rem;
+    //margin: 5.9vh auto;
+    
+    @media #{$xs-height} {
+      margin: 0 auto 2rem;
+    }
+  }
+}

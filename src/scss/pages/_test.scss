@@ -1,0 +1,19 @@
+.page {
+  .layout--test & {
+    background: url('../img/test/bg.jpg') center no-repeat;
+    background-size: cover;
+  }
+  &--test {
+    height: 100vh;
+    padding: 100px 0 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &--test &__content {
+    background: #fff;
+    padding: 50px 7.27% 60px;
+    min-height: 720px;
+  }
+}

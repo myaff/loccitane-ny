@@ -1,0 +1,38 @@
+include components/mixins
+doctype html
+block page
+  html(class=onepage ? 'enabled-onepage-scroll' : 'disabled-onepage-scroll')
+    head
+      title Loccitane New Year
+      meta(charset="UTF-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      link(href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,600,700,800&amp;subset=cyrillic-ext", rel="stylesheet")
+      link(href="build/css/main.css", rel="stylesheet")
+      script(src="build/js/vendor/jquery-3.2.1.slim.min.js")
+      script(src="build/js/vendor/mobile.js")
+      script(src="build/img/svg/sprite.js")
+    body
+      .svg-placeholder.hidden
+      script
+        | $('.svg-placeholder').html(SVG_SPRITE);
+      .layout(class="layout--#{layout}")
+        include parts/header
+        block content
+      //-  include parts/footer
+      +modal('main-menu', 'modal--circle', false, false)
+        include components/nav
+        +social(false, true)
+      +modal('wanna-gift', 'rounded', true, false)
+        +image-block('build/img/gift-popup.jpg')
+        .tp-text--center
+          + gift-form('modal-gift-form')
+      
+      //-  script(src="build/js/vendor/select2.full.min.js")
+      //-  script(src="build/js/vendor/TweenMax.min.js")
+      //-  script(src="build/js/vendor/ScrollToPlugin.min.js")
+      //-  script(src="build/js/vendor/ScrollMagic.min.js")
+      //-  script(src="build/js/vendor/animation.gsap.min.js")
+      script(src="build/js/vendor/owl.carousel.min.js")
+      script(src="build/js/vendor/onepage-scroll.min.js")
+      script(src="build/js/vendor/share.js")
+      script(src="build/js/main.js")

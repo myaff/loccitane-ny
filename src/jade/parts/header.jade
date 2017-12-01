@@ -1,0 +1,16 @@
+// header
+.header
+  .header__content
+    .header__logo.logo__wrapper.logo--loccitane
+      a.logo__link(href="http://loccitane.ru/", target="_blank")
+        svg.logo: use(xlink:href="#loccitane")/
+    unless layout === 'home'
+      .btn-menu__wrapper
+        .btn-menu.js-modal(data-target="#main-menu")
+          div
+          div
+          div
+    .header__logo.logo__wrapper.logo--elle
+      .logo__text Специальный проект
+      a.logo__link(href="http://elle.ru/", target="_blank")
+        svg.logo: use(xlink:href="#elle")/

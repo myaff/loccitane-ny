@@ -1,0 +1,24 @@
+extends template
+
+prepend page
+  - var layout = 'test';
+  - var currentPage = 'test';
+
+block content
+  .page.page--test
+    .container
+      .page__content.rounded
+        .page__header.tp-text--center
+          .page__heading.tp-heading--monstrous Тест в работе
+          .page__subheading.mt-4.tp-body--bigger-2.tp--uc Что ваш новогодний подарок может рассказать о вас?
+        //- .test-wrapper
+          .test__carousel.owl-carousel
+            each item in test
+              .test.tp-text--center
+                .test__title.tp-heading--bigger-2= item.question
+                .test__variants
+                  .grid-noBottom
+                    each variant, key in item.variants
+                      .col-3
+                        p= key
+                        p= variant

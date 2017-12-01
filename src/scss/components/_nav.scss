@@ -1,0 +1,66 @@
+$nav-color: #fff;
+$nav-color--hover: $nav-color;
+
+.nav {
+  position: relative;
+  margin: 0 0 1rem;
+  
+  @media #{$xs} {
+    padding-top: 7.5vw;
+    margin-bottom: 21.88vw;
+  }
+
+  &__list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  &__item {
+    margin: 0;
+    padding: 0;
+  }
+  
+  &__link {
+    display: block;
+    font: 800 $font-size--bigger-2 $font--base;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    color: $nav-color;
+    
+    @media #{$sm-height} {
+      font-size: 1.5rem;
+    }
+    
+    @media #{$sm-height} {
+      padding: 1.5rem;
+    }
+    
+    @media #{$xs} {
+      padding: 7.5vw 0;
+      font-size: 9vw;
+    }
+    
+    &.disabled {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+    }
+    
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: $nav-color--hover;
+    }
+  }
+}

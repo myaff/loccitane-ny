@@ -1,0 +1,19 @@
+extends template
+
+prepend page
+  - var layout = 'home';
+  - var currentPage = 'home';
+  - var onepage = true;
+
+block content
+  .page.page--home.onepage-wrapper
+    include components/home-section
+    each item, index in homeSectionsData
+      section.section.onepage-section(class="section--#{index + 1}")
+        .section__content
+          .section__content-inner
+            .grid-center-noBottom
+              .col-10
+                +homeSection(item)
+            button.btn.js-modal(data-target="#wanna-gift") получить подарок
+        .section__bg
