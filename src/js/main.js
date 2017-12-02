@@ -7,6 +7,7 @@ let Input = require("./components/input");
 //let Select = require("./components/select");
 let Form = require("./components/form");
 let Onepage = require("./components/onepage-scroll");
+let Test = require("./components/test");
 //let Animation = require("./components/animation");
 
 $(document).ready(function(){
@@ -18,6 +19,7 @@ $(document).ready(function(){
   Anchor.init();
   Input.init();
   Form.init();
+  Test.init();
   //Select.init();
   Onepage.init();
   //Animation.init();
@@ -38,6 +40,7 @@ module.exports = {
   Anchor,
   Input,
   Form,
+  Test,
   //Select,
   Onepage
 };

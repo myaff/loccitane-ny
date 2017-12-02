@@ -1,0 +1,12 @@
+extends template
+
+prepend page
+  - var layout = 'test';
+  - var currentPage = 'result';
+
+block content
+  .page.page--result
+    .container
+      .page__content.rounded
+        .page__header.tp-text--center
+          .page__heading.tp-heading--bigger-2 Result C

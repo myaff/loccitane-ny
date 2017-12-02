@@ -1,0 +1,102 @@
+$test-dot-default: #d4d4d4;
+$test-dot-active: $color--primary;
+.test {
+  min-height: 360px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  @media #{$flow-height} {
+    min-height: 360px/1080px*100vh;
+  }
+  
+  &__carousel {
+    padding-top: $grid-gutter;
+    
+    .owl-dots {
+      @include absolute(top 0 left 0);
+      @include size(100%, 1.25rem);
+      margin: 0;
+    }
+    .owl-dot {
+      @include circle(1.25rem, 50%);
+      background: $test-dot-active;
+      overflow: visible;
+      opacity: 1;
+      transition: background 0.2s;
+      margin: 0 30px;
+      padding: 0;
+      pointer-events: none;
+      
+      &.active {
+        background: $test-dot-active;
+      }
+      &.active ~ .owl-dot {
+        background: $test-dot-default;
+      }
+      
+      span {
+        display: block;
+        @include size(60px, 2px);
+        @include absolute(top 50% left 100%);
+        margin-top: -1px;
+        background: linear-gradient(to right, transparent 6px, $test-dot-default 6px, $test-dot-default 8px, transparent 8px, transparent 21px, $test-dot-default 21px, $test-dot-default 23px, transparent 23px, transparent 36px, $test-dot-default 36px, $test-dot-default 38px, transparent 38px, transparent 51px, $test-dot-default 51px, $test-dot-default 53px, transparent 53px);
+      }
+      &:last-of-type span {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    font-weight: 800;
+  }
+}
+
+.test-variant {
+  min-height: 210px;
+  cursor: pointer;
+  @media #{$flow-height} {
+    min-height: 210px/1080px*100vh;
+  }
+  
+  &__ctrl {
+    @include circle(60px);
+    overflow: visible;
+    border: 5px solid $color--primary;
+    padding: 0.5rem;
+    margin: 0 auto;
+    transition: background 0.2s;
+    .icon {
+      position: relative;
+      @include circle(100%);
+      opacity: 0;
+      transform: scale(0.6) rotate(-45deg);
+      transform-origin: center;
+      transition: opacity 0.2s, transform 0.3s;
+      z-index: 1;
+    }
+    
+    &::before {
+      content: '';
+      display: block;
+      @include circle(100%);
+      @include absolute(top 0 left 0);
+      background: inherit;
+      transform-origin: center;
+      opacity: 0.7;
+      transition: none;
+    }
+    .test-variant.is-active &::before {
+      opacity: 0;
+      transform: scale(2.5);
+      transition: all 0.5s;
+    }
+  }
+  &:hover &__ctrl {
+    background: $color--primary;
+    .icon {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+}

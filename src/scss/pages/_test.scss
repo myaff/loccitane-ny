@@ -3,17 +3,32 @@
     background: url('../img/test/bg.jpg') center no-repeat;
     background-size: cover;
   }
-  &--test {
+  &--test,
+  &--result {
     height: 100vh;
-    padding: 100px 0 150px;
+    padding: 100px 0 120px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media #{$flow-height} {
+      padding: 100px 0 120px/1080px*100vh;
+    }
   }
   
-  &--test &__content {
+  &--test &__content,
+  &--result &__content {
     background: #fff;
-    padding: 50px 7.27% 60px;
+    padding: 50px 7.27% 90px;
     min-height: 720px;
+    @media #{$flow-height} {
+      padding: 50px/1080px*100vh 7.27% 90px/1080px*100vh;
+      min-height: 720px/1080px*100vh;
+    }
+  }
+  &--result &__content {
+    padding-bottom: 70px;
+    @media #{$flow-height} {
+      padding-bottom: 70px/1080px*100vh;
+    }
   }
 }

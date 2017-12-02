@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="disabled-onepage-scroll">
+  <head>
+    <title>Loccitane New Year</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,600,700,800&amp;amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="build/css/main.css" rel="stylesheet">
+    <script src="build/js/vendor/jquery-3.2.1.slim.min.js"></script>
+    <script src="build/js/vendor/mobile.js"></script>
+    <script src="build/img/svg/sprite.js"></script>
+  </head>
+  <body>
+    <div class="svg-placeholder hidden"></div>
+    <script>$('.svg-placeholder').html(SVG_SPRITE);</script>
+    <div class="layout layout--test">
+      <!-- header-->
+      <div class="header">
+        <div class="header__content">
+          <div class="header__logo logo__wrapper logo--loccitane"><a href="http://loccitane.ru/" target="_blank" class="logo__link">
+              <svg class="logo">
+                <use xlink:href="#loccitane">
+              </svg></a></div>
+          <div class="btn-menu__wrapper">
+            <div data-target="#main-menu" class="btn-menu js-modal">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="header__logo logo__wrapper logo--elle">
+            <div class="logo__text">Специальный проект</div><a href="http://elle.ru/" target="_blank" class="logo__link">
+              <svg class="logo">
+                <use xlink:href="#elle">
+              </svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="page page--result">
+        <div class="container">
+          <div class="page__content rounded">
+            <div class="page__header tp-text--center">
+              <div class="page__heading tp-heading--bigger-2">Result A</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__wrapper invisible">
+      <div id="main-menu" class="modal invisible modal--circle">
+        <div class="modal__content">
+          <nav class="nav tp-text--center">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+              <li class="nav__item"><a href="vlad-i-rita.html" class="nav__link">Рита + Влад</a></li>
+              <li class="nav__item"><a href="test.html" class="nav__link">Тест</a></li>
+            </ul>
+          </nav>
+          <div class="social">
+            <div class="social__title">Поделитьcя</div><a href="#" target="_blank" data-type="fb" class="social__link">
+              <svg class="icon social__icon">
+                <use xlink:href="#facebook"/>
+              </svg><span class="social__text">Facebook</span></a><a href="#" target="_blank" data-type="vk" class="social__link">
+              <svg class="icon social__icon">
+                <use xlink:href="#vk"/>
+              </svg><span class="social__text">Vkontakte</span></a><a href="#" target="_blank" data-type="tw" class="social__link">
+              <svg class="icon social__icon">
+                <use xlink:href="#twitter"/>
+              </svg><span class="social__text">Twitter</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__wrapper invisible">
+      <div id="wanna-gift" class="modal invisible rounded">
+        <div data-target="#wanna-gift" class="btn-close btn--center js-modal">
+          <svg class="icon">
+            <use xlink:href="#close"></use>
+          </svg>
+        </div>
+        <div class="modal__content">
+          <div class="image-block"><img src="build/img/gift-popup.jpg" class="image-block__img"/></div>
+          <div class="tp-text--center">
+            <div id="modal-gift-form" class="gift-form js-form">
+              <form class="gift-form__form js-form-form">
+                <div class="gift-form__title tp-body--big tp--uc my-3"><b>Оставьте свой email и получите промокод на подарок от L’Occitane!</b></div>
+                <div class="gift-form__field field">
+                  <input id="modal-gift-form-input" type="email" required="required" class="field__input"/>
+                  <div class="field__placeholder">Ваш e-mail</div>
+                </div>
+                <div class="gift-form__agreement gift-form__field field">
+                  <label for="modal-gift-form-agreement" class="field__label field__label--check">
+                    <input id="modal-gift-form-agreement" type="checkbox" required="required" class="field__check"/>
+                    <div class="field__label-text tp-body--main">Я согласен на обработку своих персональных данных</div>
+                  </label>
+                </div>
+                <div class="gift-form__btn">
+                  <button class="btn js-form-submit">Получить</button>
+                </div>
+              </form>
+              <div class="gift-form__result js-form-result">
+                <div class="gift-form__title tp-body--big tp--uc mt-3 mb-6"><b>Lorem ipsum dolor sit amet, Aenean commodo ligula eget dolor. Aenean massa!</b></div>
+                <div class="gift-form__result-btn">
+                  <button data-target="#wanna-gift" class="btn js-modal">Закрыть</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="build/js/vendor/owl.carousel.min.js"></script>
+    <script src="build/js/vendor/onepage-scroll.min.js"></script>
+    <script src="build/js/vendor/share.js"></script>
+    <script src="build/js/main.js"></script>
+  </body>
+</html>

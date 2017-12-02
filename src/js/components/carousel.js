@@ -9,11 +9,11 @@ let carousel;
  * Инициализация карусели
  */
 function init(){
-  carousel = $(".owl-carousel");
+  carousel = $(".owl-carousel.carousel--default");
 
   carousel.owlCarousel({
     items: 1,
-    nav: false,
+    nav: true,
     dots: true,
     loop: false,
     mouseDrag: false,
