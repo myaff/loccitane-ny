@@ -30,8 +30,8 @@ $checkbox-bg: $field-input-bg;
   
   &__input {
     display: block;
-    @include size(100%, 50px);
-    padding: 0.75rem 1.5rem;
+    @include size(100%, 2.78em);
+    padding: 0.67em $grid-gutter;
     box-sizing: border-box;
     min-width: 320px;
     
@@ -52,19 +52,28 @@ $checkbox-bg: $field-input-bg;
   }
   &__input,
   &__placeholder {
-    font: #{$font-size--big} / 1.5rem $font--base;
+    font: #{$font-size--big} / 1.33 $font--base;
     vertical-align: middle;
     text-align: center;
+    
+    &.tp-text--left {
+      text-align: left;
+    }
+    
+    @media #{$flow-height} {
+      font-size: $font-size--big/1080px*100vh;
+    }
   }
   
   &__placeholder {
-    @include absolute(top 0.75rem left 0);
+    @include absolute(top 0.67em left 0);
     width: 100%;
     cursor: text;
     opacity: 1;
     transition: opacity 0.2s;
     font-style: italic;
     color: $field-input-placeholder-color;
+    padding: 0 $grid-gutter;
     
     .has-focus &,
     .has-value & {
@@ -75,10 +84,18 @@ $checkbox-bg: $field-input-bg;
   &__label-text {
     font-size: $font-size--base;
     color: $field-text-color;
+    
+    @media #{$flow-height} {
+      font-size: $font-size--base/1080px*100vh;
+    }
   }
   
   &__label--check &__label-text {
     padding-left: $checkbox-size + 1rem;
+    
+    @media #{$flow-height} {
+      padding-left: ($checkbox-size + 1rem)/(1080px/16px*1rem)*100vh;
+    }
   }
   
   &__check {
@@ -93,6 +110,10 @@ $checkbox-bg: $field-input-bg;
       @include size($checkbox-size);
       @include absolute(top 0 left 0);
       cursor: pointer;
+      
+      @media #{$flow-height} {
+        @include size($checkbox-size/(1080px/16px*1rem)*100vh);
+      }
     }
     
     &::before {
@@ -128,12 +149,40 @@ $checkbox-bg: $field-input-bg;
     letter-spacing: 0.05em;
     margin: 0 auto;
   }
+  
+  &__inline-field {
+    display: flex;
+    margin-bottom: 1rem;
+    
+    @media #{$flow-height} {
+      margin-bottom: 8/1080*100vh;
+    }
+    .field {
+      flex: 1 1 auto;
+      margin: 0;
+    }
+    .gift-form__btn {
+      flex: 0 0 auto;
+    }
+  }
+  
   &__form {
+    height: 125px;
+    transition: opacity 0.3s;
+    
+    @media #{$flow-height} {
+      height: 125/1080*100vh;
+    }
+  }
+  .modal &__form {
     height: 270px;
     transition: opacity 0.3s 0.2s, height 0.3s;
   }
   .is-submitted &__form {
     opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .modal .is-submitted &__form {
     height: 200px;
     transition: opacity 0.3s, height 0.3s 0.2s;
   }
@@ -148,5 +197,9 @@ $checkbox-bg: $field-input-bg;
     opacity: 1;
     z-index: 1;
     transition: opacity 0.3s 0.1s, z-index 0.1s 0.3s;
+  }
+  &--inline &__result {
+    top: 50%;
+    transform: translateY(-50%);
   }
 }

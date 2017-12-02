@@ -40,13 +40,13 @@ body {
   //min-width: 59rem;
   //min-height: calc(100vh - 12.88rem);
   
-  &__heading-text {
-    max-width: 34.5em;
-    
-    @media #{$sm-height} {
-      max-width: 38.5rem;
-    }
-  }
+  //&__heading-text {
+  //  max-width: 34.5em;
+  //  
+  //  @media #{$sm-height} {
+  //    max-width: 38.5rem;
+  //  }
+  //}
 }
 
 .container {

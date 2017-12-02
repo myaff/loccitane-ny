@@ -46,6 +46,27 @@ p {
     }
     
   }
+  &--large-2 {
+    @include heading {
+      font-size: $font-size--large-2;
+      font-weight: bold;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      
+      .layout--landing & {
+        @media #{$flow-height-landing} {
+          font-size: $font-size--large-2/1080px*100vh;
+        }
+      }
+      .layout--test &,
+      .layout--home & {
+        @media #{$flow-height} {
+          font-size: $font-size--large-2/1080px*100vh;
+        }
+      }
+    }
+  }
   &--large {
     @include heading {
       font-size: $font-size--large;

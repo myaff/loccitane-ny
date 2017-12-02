@@ -2,6 +2,7 @@
   .layout--test & {
     background: url('../img/test/bg.jpg') center no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
   &--test,
   &--result {
@@ -26,9 +27,9 @@
     }
   }
   &--result &__content {
-    padding-bottom: 70px;
+    padding: 40px 7.27% 50px;
     @media #{$flow-height} {
-      padding-bottom: 70px/1080px*100vh;
+      padding: 40px/1080px*100vh 7.27% 50px/1080px*100vh;
     }
   }
 }

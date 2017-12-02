@@ -66,13 +66,13 @@ mixin gift-form(id, isInline)
   .gift-form.js-form(class=isInline ? 'gift-form--inline' : '', id=id)
     if isInline
       form.gift-form__form.js-form-form
-        .gift-form__title.tp-heading--big= title
-        .gift-form__inline-field
-          .gift-form__field.field.tp-text--left
-            input.field__input(id="#{id}-input", type="email", required)
-            .field__placeholder= placeholder
-          .gift-form__btn: button.btn.btn--dark.js-form-submit= btnText
-        .gift-form__agreement.gift-form__field.field
+        .gift-form__title.tp-heading--big.tp--uc.mb-2.tp-text--right= title
+        .gift-form__inline-field.ml-8
+          .gift-form__field.field
+            input.field__input.tp-text--left(id="#{id}-input", type="email", required)
+            .field__placeholder.tp-text--left= placeholder
+          button.btn.btn--dark.gift-form__btn.js-form-submit= btnText
+        .gift-form__agreement.gift-form__field.field.ml-8.mb-0
           label.field__label.field__label--check(for="#{id}-agreement")
             input.field__check(id="#{id}-agreement", type="checkbox", required)
             .field__label-text= agreementText

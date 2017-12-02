@@ -9,4 +9,20 @@ block content
     .container
       .page__content.rounded
         .page__header.tp-text--center
-          .page__heading.tp-heading--bigger-2 Result D
+          .page__heading.tp-heading--bigger-2= results.d.title
+          .page__heading-text.tp-body--main.mt-3.mb-5.mx-auto: p= results.d.text
+          .page__socials.my-4
+            +social(true)
+        .page__body.advice.tp-text--center
+          .grid-noBottom
+            .col-6
+              .advice__info
+                .advice__title.tp-heading--large-2.mb-5 Совет:
+                .advice__text.tp-body--main.my-5: p= results.d.advice.text
+                .advice__btn.mt-5: a.btn(href=results.d.advice.link, target="_blank") время выбирать подарки
+            .col-5
+              .advice__img
+                img(src=results.d.advice.img)
+        .page__footer
+          +gift-form('result-gift-form', true)
+          img.ml-4(src="build/img/gift-contest.png", alt="")
