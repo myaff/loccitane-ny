@@ -12,15 +12,20 @@ $modal-circle-bg: $color--primary;
 
 .modal {
 
-  @include absolute(top 150px left 50%);
+  @include absolute(top 50% left 50%);
   @include size($modal-width, $modal-height);
-  margin-left: -1 * $modal-width / 2;
+  //margin-left: -1 * $modal-width / 2;
   background: $modal-bg;
   padding: $grid-gutter $grid-gutter $grid-gutter * 2;
   z-index: 0;
   opacity: 0;
-  transform: translateY(50%) scaleY(0);
+  transform: translate(-50%, 0) scaleY(0);
+  transform-origin: center center;
   transition: opacity 0.3s, transform 0.3s, z-index 0.1s 0.3s;
+  
+  @media #{$flow-height} {
+    width: $modal-width / (1080px/16px*1rem) * 100vh;
+  }
   
   @media screen and (max-width: #{$modal-width + 3rem}) {
     width: calc(100% - 3rem);
@@ -41,20 +46,26 @@ $modal-circle-bg: $color--primary;
   &.is-opened {
     z-index: 1;
     opacity: 1;
-    transform: scaleY(1) translateY(0);
+    transform: scaleY(1) translate(-50%, -50%);
+  transform-origin: center center;
     transition: z-index 0.1s, opacity 0.3s 0.1s, transform 0.3s 0.1s;
   }
   &--circle {
-    top: 0.75rem;
+    top: 10px;
     @include circle($modal-circle-size);
-    margin-left: -1 * $modal-circle-size / 2;
+    //margin-left: -1 * $modal-circle-size / 2;
     background: $modal-circle-bg;
     padding: 90px;
     transform-origin: top center;
-    transform: scale(0);
+    transform: translateX(-50%) scale(0);
     
+    @media #{$flow-height} {
+      @include size(70vh);
+      padding: 120px/1080px*100vh 100px/1080px*100vh;
+    }
+      
     &.is-opened {
-      transform: scale(1);
+      transform: translateX(-50%) scale(1);
     }
   }
   &--circle &__content {

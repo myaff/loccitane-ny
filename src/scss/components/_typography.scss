@@ -229,7 +229,8 @@ p {
       }
     }
     .layout--test &,
-    .layout--home & {
+    .layout--home &,
+    .modal & {
       @media #{$flow-height} {
         font-size: $font-size--big/1080px*100vh;
       }

@@ -53,6 +53,9 @@
   &--loccitane .logo {
     @include size(13.75rem, 50px);
     
+    @media #{$flow-height} {
+      @include size(13.75rem/67.5rem*100vh, 50px);
+    }
     @media #{$md} {
       @include size(18vw, 4vw);
     }
@@ -60,6 +63,9 @@
   &--elle .logo {
     @include size(7.5rem, 50px);
     
+    @media #{$flow-height} {
+      @include size(7.5rem/67.5rem*100vh, 50px);
+    }
     @media #{$md} {
       @include size(10vw, 4vw);
     }

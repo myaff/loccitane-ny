@@ -11,6 +11,10 @@
   display: block;
   z-index: $z-index--modal - 10;
   
+  @media #{$flow-height} {
+    @include size(90px/1080px*100vh);
+  }
+  
   &::before {
     content: '';
     display: block;
@@ -39,9 +43,9 @@
   }
   
   div {
-    @include size(2rem, 3px);
-    @include absolute(top 50% left 50%);
-    margin-left: -1rem;
+    @include size(50%, 3px);
+    @include absolute(top 50% left 25%);
+    //margin-left: -1rem;
     background: currentColor;
     transform-origin: center;
     transition: transform 0.3s;

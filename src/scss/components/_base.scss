@@ -55,6 +55,10 @@ body {
   max-width: 71.75rem;
   padding: 0 $grid-gutter;
   
+  @media #{$flow-height} {
+    max-width: 130vh;
+  }
+  
   @media #{$md-landing} {
     padding: 0 2.2vw;
   }

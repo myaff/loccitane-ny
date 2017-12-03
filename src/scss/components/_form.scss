@@ -177,6 +177,22 @@ $checkbox-bg: $field-input-bg;
   .modal &__form {
     height: 270px;
     transition: opacity 0.3s 0.2s, height 0.3s;
+    
+    @media #{$flow-height} {
+      height: 270px/1080px*100vh;
+    }
+    
+    .field:not(.gift-form__agreement),
+    .field__input {
+      @media #{$flow-height} {
+        min-width: 100%;
+      }
+    }
+    .field {
+      @media #{$flow-height} {
+        margin-bottom: 1rem / (1080px/16px*1rem) * 100vh;
+      }
+    }
   }
   .is-submitted &__form {
     opacity: 0;
@@ -185,6 +201,10 @@ $checkbox-bg: $field-input-bg;
   .modal .is-submitted &__form {
     height: 200px;
     transition: opacity 0.3s, height 0.3s 0.2s;
+    
+    @media #{$flow-height} {
+      height: 200px/1080px*100vh;
+    }
   }
   &__result {
     @include absolute(top 0 left 0);

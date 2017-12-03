@@ -28,15 +28,11 @@ $nav-color--hover: $nav-color;
     line-height: 1;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    padding: 1.5rem;
+    padding: 1em;
     color: $nav-color;
     
-    @media #{$sm-height} {
-      font-size: 1.5rem;
-    }
-    
-    @media #{$sm-height} {
-      padding: 1.5rem;
+    @media #{$flow-height} {
+      font-size: $font-size--bigger-2/1080px*100vh;
     }
     
     @media #{$xs} {
