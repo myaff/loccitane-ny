@@ -15,8 +15,9 @@
 "homeSectionsData": [
   {
     "img": false,
-    "title": "Lorem",
-    "subtitle": "ipsum dolor sit amet consectetuer adipiscing elit.",
+    "title": "Волшебство начинается",
+    "subtitle": "Чем порадовать близких?",
+    "subtitle2Line": "Звездные пары о новогодних подарках",
     "text": false,
     "btn": false,
     "scroller": true
@@ -56,7 +57,7 @@
   },
   {
     "img": "build/img/home/img-5.png",
-    "title": "ipsum dolor sit amet consectetuer adipiscing elit.",
+    "title": "Выберите новогодний сюрприз для самых близких!",
     "subtitle": false,
     "text": false,
     "btn": {

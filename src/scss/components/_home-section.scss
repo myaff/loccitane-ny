@@ -38,6 +38,10 @@
     }
     &-icon .icon {
       @include size(20px, 50px);
+      
+      @media #{$flow-height} {
+        @include size(20px/1080px*100vh, 50px/1080px*100vh);
+      }
     }
   }
   
@@ -51,7 +55,12 @@
   }
   
   .section--1 &__title {
-    margin-top: 19vh;
+    margin-top: 16vh;
+    font-size: 57px;
+    line-height: 1.23;
+    @media #{$flow-height} {
+      font-size: 57px/1080px*100vh;
+    }
   }
   .section--2 &__title,
   .section--4 &__title {

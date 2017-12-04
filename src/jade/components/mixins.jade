@@ -62,7 +62,8 @@ mixin gift-form(id, isInline)
   - var placeholder = 'Ваш e-mail';
   - var btnText = 'Получить';
   - var agreementText = 'Я согласен на обработку своих персональных данных';
-  - var resultText = 'Lorem ipsum dolor sit amet, Aenean commodo ligula eget dolor. Aenean massa!';
+  - var resultText1 = 'Спасибо!';
+  - var resultText2 = 'Ваш подарок уже в пути!';
   .gift-form.js-form(class=isInline ? 'gift-form--inline' : '', id=id)
     if isInline
       form.gift-form__form.js-form-form
@@ -77,7 +78,7 @@ mixin gift-form(id, isInline)
             input.field__check(id="#{id}-agreement", type="checkbox", required)
             .field__label-text= agreementText
       .gift-form__result.js-form-result
-        .gift-form__result-text.tp-body--big.tp--uc: b= resultText
+        .gift-form__result-text.tp-body--big.tp--uc: b #{resultText1} #{resultText2}
     else
       form.gift-form__form.js-form-form
         .gift-form__title.tp-body--big.tp--uc.my-3: b= title
@@ -90,5 +91,5 @@ mixin gift-form(id, isInline)
             .field__label-text.tp-body--main= agreementText
         .gift-form__btn: button.btn.js-form-submit= btnText
       .gift-form__result.js-form-result
-        .gift-form__title.tp-body--big.tp--uc.mt-3.mb-6: b= resultText
+        .gift-form__title.tp-body--big.tp--uc.mt-3.mb-6: b #{resultText1} <br> #{resultText2}
         .gift-form__result-btn: button.btn.js-modal(data-target="#wanna-gift") Закрыть

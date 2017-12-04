@@ -7,7 +7,11 @@ mixin homeSection(item)
       else
         .home-section__title.tp-heading--monstrous.mx-auto= item.title
       if item.subtitle
-        .home-section__subtitle.tp-body--bigger-2.tp--uc.mx-auto= item.subtitle
+        .home-section__subtitle.tp-body--bigger-2.tp--uc.mx-auto
+          span= item.subtitle
+          if item.subtitle2Line
+            br
+            span= item.subtitle2Line
       if item.text
         .home-section__text.mx-auto: p.tp-body--big= item.text
           block

@@ -62,15 +62,13 @@ function init(){
       }
   });
   
-  $('.modal').on('click', function(e) {
-    e.stopPropagation();
-  });
-  
   $(modalWrapperClass).on('click', function(e) {
-    let modal = $(this).find('.modal.is-opened');
-    modal.each(function(){
-      closeModal($(this));
-    });
+    if ($(e.target).hasClass('modal__wrapper')) {
+      let modal = $(this).find('.modal.is-opened');
+      modal.each(function(){
+        closeModal($(this));
+      });
+    }
   });
 
     function openModalHash() {

@@ -17,9 +17,9 @@ var Share = {
                     type:       'vk',    // тип соцсети
                     url:        location.href,  // какую ссылку шарим
                     count_url:  location.href,  // для какой ссылки крутим счётчик
-                    title:      "Специальный проект L'Occitane и Psychologies", // заголовок шаринга
+                    title:      "Волшебство начинается! Узнай, чем порадовать близких?", // заголовок шаринга
                     image:      "http://divine.psychologies.ru/share.jpg",             // картинка шаринга
-                    text:       "Пять очаровательных женщин делятся своими секретами.",             // текст шаринга
+                    text:       "Волшебство начинается! Узнай, чем порадовать близких?",             // текст шаринга
                 },
                 $(_element).data(), // Если параметры заданы в data, то читаем их
                 _options            // Параметры из вызова метода имеют наивысший приоритет
@@ -48,9 +48,9 @@ var Share = {
     vk: function(_options) {
         var options = $.extend({
             url:    location.href,
-            title:  "Специальный проект L'Occitane и Psychologies",
+            title:  "Волшебство начинается! Узнай, чем порадовать близких?",
             image:  "http://divine.psychologies.ru/share.jpg",
-            text:   "Пять очаровательных женщин делятся своими секретами.",
+            text:   "Волшебство начинается! Узнай, чем порадовать близких?",
         }, _options);
 
         return 'http://vkontakte.ru/share.php?'
@@ -65,7 +65,7 @@ var Share = {
     ok: function(_options) {
         var options = $.extend({
             url:    location.href,
-            text:   "Специальный проект L'Occitane и Psychologies",
+            text:   "Волшебство начинается! Узнай, чем порадовать близких?",
         }, _options);
 
         return 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1'
@@ -77,9 +77,9 @@ var Share = {
     fb: function(_options) {
         var options = $.extend({
             url:    location.href,
-            title:  "Специальный проект L'Occitane и Psychologies",
+            title:  "Волшебство начинается! Узнай, чем порадовать близких?",
             image:  "http://divine.psychologies.ru/share.jpg",
-            text:   "Пять очаровательных женщин делятся своими секретами.",
+            text:   "Волшебство начинается! Узнай, чем порадовать близких?",
         }, _options);
 
         return 'http://www.facebook.com/sharer.php?s=100'
@@ -107,7 +107,7 @@ var Share = {
     tw: function(_options) {
         var options = $.extend({
             url:        location.href,
-            title:      "Специальный проект L'Occitane и Psychologies",
+            title:      "Волшебство начинается! Узнай, чем порадовать близких?",
         }, _options);
 
         return 'http://twitter.com/share?'

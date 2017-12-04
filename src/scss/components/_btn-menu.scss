@@ -1,6 +1,6 @@
 .btn-menu {
   position: relative;
-  @include circle(70px);
+  @include circle(70px, 50%);
   overflow: visible;
   padding: 0;
   border: 0;
