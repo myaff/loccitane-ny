@@ -25,6 +25,10 @@ function validateForm(elForm) {
   return errors;
 }
 
+function getPageType (layout) {
+  return layout === 'test' ? 'test' : 'main';
+}
+
 /**
  * инициализация событий форм
  * @example
@@ -49,7 +53,7 @@ function init(){
           dataType: 'json',
           data: {
             'email': $(selfForm).find('input[type="email"]').val(),
-            'page': self.attr('data-page-type')
+            'page': getPageType(self.attr('data-page-type'))
           },
           beforeSend: function () {
             selfSubmit.attr('disabled', 'disabled');
