@@ -24,8 +24,14 @@
   }
   &-21 {
     margin-top: -80px;
+    @media screen and (max-width: 1200px) {
+      margin-top: -50px/1300px*100vw;
+    }
   }
   &-22 {
     margin-top: 150px;
+    @media #{$md-landing} {
+      margin-top: 130px/1300px*100vw;
+    }
   }
 }

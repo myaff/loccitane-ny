@@ -18,11 +18,22 @@ function addClassTogglerScene (el, controller) {
 function addClassTogglerController (animationBlocks) {
   let controller = new ScrollMagic.Controller();
   animationBlocks.each(function(){
-    let aDelay = 0;
-    if ($(this).attr('data-a-delay') !== undefined) {
-      aDelay = Number($(this).attr('data-a-delay')) * 1000;
+    let closestContainer = $(this).closest('[class*="grid"]:not([class*="col"])')[0];
+    if (closestContainer.offsetTop < window.outerHeight) {
+      $(this).children('[class*="a-"]').css({'transition': 'none'});
+      let self = this;
+      let delay = 250 * $(closestContainer).index();
+      $(self).data('timer', setTimeout(function () {
+        $(self).children('[class*="a-"]').css({'transition': ''});
+        $(self).addClass('animate');
+      }, 250));
+    } else {
+      let aDelay = 0;
+      if ($(this).attr('data-a-delay') !== undefined) {
+        aDelay = Number($(this).attr('data-a-delay')) * 1000;
+      }
+      setTimeout(addClassTogglerScene, aDelay, this, controller);
     }
-    setTimeout(addClassTogglerScene, aDelay, this, controller);
   });
 }
 

@@ -4,11 +4,10 @@ let Carousel = require("./components/carousel");
 let Modal = require("./components/modal");
 let Anchor = require("./components/anchor");
 let Input = require("./components/input");
-//let Select = require("./components/select");
 let Form = require("./components/form");
 let Onepage = require("./components/onepage-scroll");
 let Test = require("./components/test");
-//let Animation = require("./components/animation");
+let Animation = require("./components/animation");
 
 $(document).ready(function(){
   
@@ -20,9 +19,8 @@ $(document).ready(function(){
   Input.init();
   Form.init();
   Test.init();
-  //Select.init();
   Onepage.init();
-  //Animation.init();
+  Animation.init();
   
 });
 
@@ -41,6 +39,6 @@ module.exports = {
   Input,
   Form,
   Test,
-  //Select,
-  Onepage
+  Onepage,
+  Animation
 };

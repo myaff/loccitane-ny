@@ -25,7 +25,6 @@ function validateForm(elForm) {
   return errors;
 }
 
-
 /**
  * инициализация событий форм
  * @example
@@ -44,16 +43,24 @@ function init(){
       e.preventDefault();
       let hasError = validateForm(selfForm[0]);
       if (!hasError) {
-        //
-        // submition code here!
-        //
-        self.addClass('is-submitted');
-        //setTimeout(function(){
-        //  selfForm.hide();
-        //}, 500);
-        setTimeout(function(){
-          selfResult.show();
-        }, 300);
+        let request = $.ajax({
+          url: 'http://loccitane.hsmp.ru/api/emails/',
+          type: 'POST',
+          dataType: 'json',
+          data: {
+            'email': $(selfForm).find('input[type="email"]').val(),
+            'page': self.attr('data-page-type')
+          },
+          beforeSend: function () {
+            selfSubmit.attr('disabled', 'disabled');
+          }
+        });
+        request.done(function (response, textStatus, jqXHR) {
+          self.addClass('is-submitted');
+          setTimeout(function(){
+            selfResult.show();
+          }, 300);
+        });
       }
     });
   });

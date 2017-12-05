@@ -277,6 +277,9 @@ p {
       @media #{$flow-height-landing} {
         font-size: $font-size--main/1080px*100vh;
       }
+      @media #{$md-landing} {
+        font-size: 14px;
+      }
     }
     .layout--test &,
     .layout--home & {

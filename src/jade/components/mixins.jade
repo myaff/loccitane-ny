@@ -64,7 +64,7 @@ mixin gift-form(id, isInline)
   - var agreementText = 'Я согласен на обработку своих персональных данных';
   - var resultText1 = 'Спасибо!';
   - var resultText2 = 'Ваш подарок уже в пути!';
-  .gift-form.js-form(class=isInline ? 'gift-form--inline' : '', id=id)
+  .gift-form.js-form(class=isInline ? 'gift-form--inline' : '', id=id, data-page-type=layout)
     if isInline
       form.gift-form__form.js-form-form
         .gift-form__title.tp-heading--big.tp--uc.mb-2.tp-text--right= title

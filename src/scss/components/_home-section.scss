@@ -58,6 +58,7 @@
     margin-top: 16vh;
     font-size: 57px;
     line-height: 1.23;
+    max-width: 750/1000*100vh;
     @media #{$flow-height} {
       font-size: 57px/1080px*100vh;
     }

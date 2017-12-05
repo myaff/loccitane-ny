@@ -12,6 +12,9 @@
     }
     
     &-fade-slide {
+      &.z-1 {
+        z-index: 1;
+      }
       .is-animating & {
         opacity: 0;
         transform: translateY(2rem);
@@ -24,7 +27,7 @@
       }
     }
     
-    &-ordered {
+    .is-animating &-ordered {
       @for $i from 0 through 5 {
         &:nth-child(#{$i}) {
           transition-delay: 0.3s * $i;
@@ -32,8 +35,8 @@
       }
     }
     
-    &-delay {
-      @for $i from 0 through 5 {
+    .is-animating &-delay {
+      @for $i from 0 through 6 {
         &-#{$i} {
           transition-delay: 0.3s * $i;
         }
