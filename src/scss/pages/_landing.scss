@@ -35,3 +35,33 @@
     }
   }
 }
+.page--landing .ve {
+  &-10 {
+    margin-top: 100px;
+    @media #{$md-landing} {
+      margin-top: 100px/1300px*100vw;
+    }
+    
+    .image-block--styled::before {
+      margin-top: -210/460*100%;
+      margin-left: -100/460*100%;
+    }
+  }
+  &-22 {
+    margin-top: -320px;
+    @media #{$md-landing} {
+      margin-top: -320px/1300px*100vw;
+    }
+  }
+  &-32 {
+    .image-block--styled::before {
+      margin-left: -100/460*100%;
+    }
+  }
+  &-42 {
+    margin-top: -110px;
+    @media #{$md-landing} {
+      margin-top: -110px/1300px*100vw;
+    }
+  }
+}

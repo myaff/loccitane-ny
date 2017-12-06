@@ -46,12 +46,12 @@
   },
   {
     "img": "build/img/home/img-4.png",
-    "title": "ipsum dolor sit amet consectetuer adipiscing elit.",
+    "title": "Владимир Вдовиченков и Елена Лядова, актеры театра и кино",
     "subtitle": false,
     "text": false,
     "btn": {
-      "href": "#",
-      "text": "Скоро"
+      "href": "vladimir-i-elena.html",
+      "text": "Читать историю"
     },
     "scroller": false
   },
@@ -61,7 +61,7 @@
     "subtitle": false,
     "text": false,
     "btn": {
-      "href": "#",
+      "href": "http://pubads.g.doubleclick.net/gampad/clk?id=4503665242&iu=/81006599/hmiru-elle/count",
       "text": "идеи подарков"
     },
     "scroller": false
@@ -144,7 +144,7 @@
     "advice": {
       "img": "build/img/result/a.png",
       "text": "Подарите близкому человеку Золотой час Прованса – это, пожалуй, круче, чем отыскать подснежники зимой. Золотым часом называют в Провансе тот волшебный момент, когда небо озаряется сиянием заходящего солнца. О нем напоминает аромат TERRE DE LUMIÈRE с его пряными нотами розового перца и бергамота и теплыми оттенками медовой лаванды.",
-      "link": "#"
+      "link": "http://pubads.g.doubleclick.net/gampad/clk?id=4503665503&iu=/81006599/hmiru-elle/count"
     }
   },
   "b": {
@@ -154,7 +154,7 @@
     "advice": {
       "img": "build/img/result/b.png",
       "text": "Выберите в качестве подарка адвент-календарь L’Occitane! Это восхитительная коробочка с маленькими окошечками, а в ней представлены все самые любимые средства L’Occitane, которые сделают ожидание новогодних праздников по-настоящему волшебным!",
-      "link": "#"
+      "link": "http://pubads.g.doubleclick.net/gampad/clk?id=4504228734&iu=/81006599/hmiru-elle/count"
     }
   },
   "c": {
@@ -164,7 +164,7 @@
     "advice": {
       "img": "build/img/result/c.png",
       "text": "Подарите любимому человеку маленькое путешествие в Прованс! Подарочный сертификат L’Occitane позволит ему выбрать любые продукты или SPA-программу себе по вкусу. Процедуры по уходу за кожей лица, массажи, скрабы, обертывания – удовольствие, совмещенное с пользой, что может быть лучше?",
-      "link": "#"
+      "link": "http://pubads.g.doubleclick.net/gampad/clk?id=4503665452&iu=/81006599/hmiru-elle/count"
     }
   },
   "d": {
@@ -174,7 +174,7 @@
     "advice": {
       "img": "build/img/result/d.png",
       "text": "Если вы в последний момент вспомнили про десяток подарков для друзей и приятелей, загляните на  страницу L’Occitane с подарочными наборами – там вы найдете сразу все, что необходимо.",
-      "link": "#"
+      "link": "http://pubads.g.doubleclick.net/gampad/clk?id=4503665428&iu=/81006599/hmiru-elle/count"
     }
   }
 }

@@ -27,7 +27,7 @@ mixin image-block(src, isStyled)
     img.image-block__img(src=src)
 
 //- gift
-mixin gift(img, title, forWhom, link)
+mixin gift(img, title, forWhom, link, btnTheme)
   .gift-block.tp-text--center.px-6
     .gift-block__img: img(src=img, alt=title)
     .gift-block__title.tp-body--bigger.tp--accent= title
@@ -36,7 +36,7 @@ mixin gift(img, title, forWhom, link)
       .gift-block__text.tp-body--main.my-3
         block
     if link
-      .gift-block__btn.mt-3: a.btn.btn--dark.btn--medium(href=link, target="_blank") Подробнее
+      .gift-block__btn.mt-3: a.btn.btn--medium(class=btnTheme ? "btn--" + btnTheme : '', href=link, target="_blank") Подробнее
 
 //- other story
 mixin story-block(img, title, link)

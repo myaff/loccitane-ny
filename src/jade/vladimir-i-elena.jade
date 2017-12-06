@@ -1,0 +1,78 @@
+extends template
+
+prepend page
+  - var layout = 'landing';
+  - var currentPage = 've';
+
+block content
+  .page.page--landing
+    .container
+      .page__content
+        .page__top-btn: button.btn.js-modal(data-target="#wanna-gift") получить подарок
+        .grid-center-noBottom
+          .col-10
+            .page__header.tp-text--center.a-scroll-box
+              .page__heading.tp-heading--huge.mb-3.mx-auto.a-fade-slide.a-ordered Владимир Вдовиченков <br/>и Елена Лядова
+              .page__heading-note.tp-body--medium.tp--uc.mb-4.mx-auto.a-fade-slide.a-ordered актеры театра и кино
+              .page__heading-text.tp-body--bigger-2.tp--accent.mx-auto.a-fade-slide.a-ordered
+                p: em Они познакомились пять лет назад на съемочной площадке фильма «Левиафан», где сыграли ведущие роли. Картина подарила им мировую известность, признание публики и… любовь друг к другу. Два года спустя Елена и Владимир поженились.
+        .grid-noBottom.mt-9.ve-1
+          .col-6.ve-10.a-scroll-box
+            .a-fade-slide.a-delay-4
+              +image-block('build/img/content/ve-1.jpg', true)
+          .col-6.ve-11.a-scroll-box(data-push-left="off-1", data-push-right="off-minus-1")
+            .a-fade-slide.a-delay-5.z-1
+              +text-block('Елена')
+                p Я родилась на католическое рождество, 25 декабря. К этому дню мы всей семьей обязательно наряжали елку. И подарки, которые мне дарили на день рождения, были окрашены новогодним флером. Так и теперь: 24 декабря ставим елку, и у нас уже новогоднее настроение.
+            .a-fade-slide.a-delay-6.z-1
+              +text-block('Владимир')
+                p А у меня в детстве Новый год ассоциировался с шоколадом. Много шоколадных конфет – и их можно есть без всяких ограничений!
+        .grid-noBottom-noWrap.ve-2.mt-6
+          .col-6.ve-21.a-scroll-box
+            .a-fade-slide.z-1
+              +gift('build/img/content/ve-gift-1.png', 'Набор «Можжевельник: символ абсолютной мужественности»', 'Для него', 'http://pubads.g.doubleclick.net/gampad/clk?id=4504228950&iu=/81006599/hmiru-elle/count', 'secondary')
+                p.tp--accent.mb-5 Изысканный подарок для сильного и уверенного мужчины – древесно-пряный, смолистый аромат можжевельника дополняют элегантные, чуть терпкие ноты бергамота, розового перца и кедра. Целебные компоненты геля и бальзама не только успокаивают и смягчают кожу, но и способствуют заживлению ран и порезов.
+          .col-7.grid-noBottom.ve-22(data-push-right="off-minus-1")
+            .col-12.a-scroll-box
+              .a-fade-slide
+                +image-block('build/img/content/ve-2.jpg')
+            .col-6-7.mt-6.a-scroll-box(data-push-left="off-1-7")
+              .a-fade-slide.z-1.pr-3
+                +text-block('Елена', true)
+                  p: em Мечтаю об очень высокой елке. Я бы взяла стремянку, мешок игрушек и нарядила ее для всего двора. Все соседи вместе бы ее наряжали и радовались.
+        .grid-noBottom-noWrap.ve-3.mt-6
+          .col-7.grid-center-noBottom.ve-31.pt-2(data-push-left="off-minus-1")
+            .col-6-7.mt-7.a-scroll-box(data-push-left="off-1-7")
+              .a-fade-slide.a-delay-2.z-1
+                +text-block('Владимир')
+                  p Преподнести ошеломительный подарок, как это сделал герой Юрия Яковлева в «Гусарской балладе»: хоп! – и достал цветок среди зимы – это эффектно, не спорю. Но в обычной жизни я предпочитаю не дарить наобум. Стараюсь как-то между прочим выведать, что человеку хотелось бы получить, что ему нужно. А уж полезна эта вещь или ерунда полная – это ему решать. 
+            .col-12.mt-6.a-scroll-box
+              .a-fade-slide.z-1
+                +image-block('build/img/content/ve-4.jpg')
+          .col-6.ve-32.a-scroll-box
+            .a-fade-slide
+              +image-block('build/img/content/ve-3.jpg', true)
+        .grid-noBottom-noWrap.ve-4.mt-9
+          .col-6.ve-41.a-scroll-box
+            .a-fade-slide.z-1
+              +gift('build/img/content/ve-gift-2.png', 'Набор «Роза 4 Королевы»', 'Для нее', 'https://www.loccitane.ru/rose-4-queens,9,2,383,802432.htm?utm_source=elle&utm_medium=interview_lyadova_vdovichenkov&utm_campaign=RURU_christmas_awareness_branding_multi', 'secondary')
+                p Эти нежные средства окутают вас соблазнительным бархатистым ароматом четырех роз: розы Грасса, болгарской розы, розы Марокко и турецкой розы. Превращаясь в пену при контакте с водой, гель нежно очищает и питает кожу, молочко для тела и крем для рук увлажняют и разглаживают. А все вместе дарят минуты незабываемого наслаждения.
+          .col-6.grid-noBottom.ve-42(data-push-left="off-1", data-push-right="off-minus-1")
+            .col-10.a-scroll-box
+              .a-fade-slide.z-1
+                +text-block('Елена')
+                  p Очень люблю сюрпризы! Когда же еще их делать, как не в эту мистическую ночь? Однажды в детстве я перед Новым годом случайно увидела подарки, которые мама приготовила для меня и спрятала за диван. Я тогда поняла, как сильно меня любят родители, но запомнила: подарок должен быть неожиданным! Только тогда он вызовет сильные эмоции. С тех пор всегда стремлюсь найти то, что удивит и порадует.
+            .col-12.a-scroll-box
+              .a-fade-slide.z-1
+                +text-block('Владимир', true)
+                  p: em У нас сегодня такой огромный выбор косметики, что ее можно дарить без конца и не повторяться. Это очень приятные знаки внимания, и они никогда не надоедают.
+        .grid-center.ve-5.a-scroll-box
+          .col-10.a-fade-slide.a-ordered
+            +text-block('Елена', false, true)
+              p Мы с Володей любим бывать в магазинах парфюмерии и косметики, пробуем новые ароматы, советуемся с консультантом, подбираем духи для разных поводов и времен года. Запахи создают настроение. Обычно меня привлекает что-то сладкое, теплое, но в то же время не жаркое, с кислинкой. Очень нравятся гели для душа L’Occitane с насыщенным розовым ароматом. Вообще у этой марки очень «уютная» продукция, она вызывает доверие. Я обожаю открывать все эти красивые баночки, смотреть описания, пробовать крема, нежное молочко для тела. А миниатюрные тюбики с кремом для рук от L’Occitane у меня просто везде – во всех сумках и карманах.
+          .col-10.a-fade-slide.a-ordered
+            +social(true, true)
+      //- .grid-noBottom.mt-8
+          each item in [{title: 'Влад и Рита', img: 'build/img/stories/vr-small.png', link: '#'}, {title: 'Кирилл и александра', img: 'build/img/stories/ka-small.png', link: '#'}]
+            .col-6
+              +story-block(item.img, item.title, item.link)

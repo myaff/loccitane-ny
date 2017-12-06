@@ -35,6 +35,8 @@ $glp_col-10-12: (100%/10);
 $glp_col-11-12: (100%/11);
 $glp_col-4-9: ($glp_col-9-12*4);
 $glp_col-5-9: ($glp_col-9-12*5);
+$glp_col-1-7: (100%/7);
+$glp_col-6-7: ($glp_col-1-7*6);
 
 // Function to generate the grid by number
 @mixin makeGridByNumber($grid)
@@ -72,6 +74,7 @@ $glp_col-5-9: ($glp_col-9-12*5);
         > [class*="#{$col}-4-9"]{ flex-basis: $glp_col-4-9;max-width: $glp_col-4-9;}
         > [class*="#{$col}-5-9"]{ flex-basis: $glp_col-5-9;max-width: $glp_col-5-9;}
         > [class*="#{$col}-1-9"]{ flex-basis: $glp_col-9-12;max-width: $glp_col-9-12;}
+        > [class*="#{$col}-6-7"]{ flex-basis: $glp_col-6-7;max-width: $glp_col-6-7;}
     }
 }
 
@@ -95,6 +98,7 @@ $glp_col-5-9: ($glp_col-9-12*5);
         > [data-push-left*="#{$off}-1-9"]{ margin-left: $glp_col-9-12; }
         > [data-push-left*="#{$off}-4-9"]{ margin-left: $glp_col-4-9; }
         > [data-push-left*="#{$off}-5-9"]{ margin-left: $glp_col-5-9; }
+        > [data-push-left*="#{$off}-1-7"]{ margin-left: $glp_col-1-7; }
 
         > [data-push-right*="#{$off}-minus-1"]{ margin-right: -1 * $glp_col-1; }
         > [data-push-right*="#{$off}-0"]{ margin-right: 0; }
@@ -112,5 +116,6 @@ $glp_col-5-9: ($glp_col-9-12*5);
         > [data-push-right*="#{$off}-1-9"]{ margin-right: $glp_col-9-12; }
         > [data-push-right*="#{$off}-4-9"]{ margin-right: $glp_col-4-9; }
         > [data-push-right*="#{$off}-5-9"]{ margin-right: $glp_col-5-9; }
+        > [data-push-right*="#{$off}-1-7"]{ margin-right: $glp_col-1-7; }
     }
 }
