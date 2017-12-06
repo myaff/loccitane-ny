@@ -23,7 +23,8 @@
     "scroller": true
   },
   {
-    "img": "build/img/home/img-2.png",
+    "img": "build/img/home/img-2_1.png",
+    "img2": "build/img/home/img-2_2.png",
     "title": "Влад Соколовский и Рита Дакота, певцы, авторы песен",
     "subtitle": false,
     "text": false,
@@ -45,7 +46,8 @@
     "scroller": false
   },
   {
-    "img": "build/img/home/img-4.png",
+    "img": "build/img/home/img-4_1.png",
+    "img2": "build/img/home/img-4_2.png",
     "title": "Владимир Вдовиченков и Елена Лядова, актеры театра и кино",
     "subtitle": false,
     "text": false,

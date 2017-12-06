@@ -44,6 +44,9 @@
       
       > .btn {
         margin-top: 180px;
+        opacity: 0;
+        transform: translateY(20%);
+        transition: all 0.3s 1.5s;
         
         @media #{$flow-height} {
           margin-top: 16.67vh;
@@ -52,6 +55,13 @@
           margin-top: 13vh;
         }
       }
+    }
+    &.active .section__btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &--3.active .section__btn {
+      transition-delay: 1.7s;
     }
   }
 }

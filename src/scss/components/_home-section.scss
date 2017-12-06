@@ -20,8 +20,35 @@
     }
   }
   
+  &__title,
+  &__subtitle,
+  &__text,
+  &__scroller,
+  &__btn-wrapper {
+    opacity: 0;
+    transform: translateY(20%);
+    transition: all 0.3s;
+    
+    .active & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  &__title {
+    transition-delay: 0.5s;
+  }
+  
+  &__img + &__title {
+    transition-delay: 0.8s;
+  }
+  &__img--double + &__title {
+    transition-delay: 0.8s;
+  }
+  
   &__subtitle {
     margin: 2rem 0 2.5rem;
+    transition-delay: 0.8s;
     
     @media #{$flow-height} {
       margin: 2.5vh 0 3.5vh;
@@ -30,6 +57,7 @@
   
   &__scroller {
     margin-top: 5rem;
+    transition-delay: 1.1s;
     @media #{$flow-height} {
       margin-top: 6vh;
     }
@@ -45,12 +73,38 @@
     }
   }
   
+  &__text {
+    transition-delay: 1.1s;
+  }
+  &__btn-wrapper {
+    transition-delay: 1.2s;
+    
+    .section--3 & {
+      transition-delay: 1.4s;
+    }
+  }
+  
   &__img {
     img {
       max-width: 100%;
+      opacity: 0;
+      transform: translateY(20%);
+      transition: all 0.5s 0.3s;
       @media #{$flow-height} {
         max-height: 48vh;
       }
+    }
+    &--double img:first-of-type {
+      transform: translateX(-10%);
+    }
+    &--double img:last-of-type {
+      @include absolute(top 0 left 0);
+      transform: translateX(10%);
+      transition-delay: 0.5s;
+    }
+    .active & img {
+      transform: translate(0);
+      opacity: 1;
     }
   }
   

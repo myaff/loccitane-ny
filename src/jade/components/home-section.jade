@@ -2,7 +2,10 @@ mixin homeSection(item)
   .home-section
     .home-section__content
       if item.img
-        .home-section__img: img(src="#{item.img}", alt="")
+        .home-section__img(class=item.img2 ? 'home-section__img--double' : '')
+          img(src="#{item.img}", alt="")
+          if item.img2
+            img(src="#{item.img2}", alt="")
         .home-section__title.tp-heading--bigger.mx-auto= item.title
       else
         .home-section__title.tp-heading--monstrous.mx-auto= item.title
