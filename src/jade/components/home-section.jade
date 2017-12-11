@@ -2,10 +2,15 @@ mixin homeSection(item)
   .home-section
     .home-section__content
       if item.img
-        .home-section__img(class=item.img2 ? 'home-section__img--double' : '')
-          img(src="#{item.img}", alt="")
-          if item.img2
+        .home-section__img(class=item.img1 && item.img2 && !isMobile ? 'home-section__img--double' : '')
+          if item.img1 && item.img2 && !isMobile
+            img(src="#{item.img1}", alt="")
             img(src="#{item.img2}", alt="")
+          else
+            if isMobile
+              img(src="../#{item.img}", alt="")
+            else
+              img(src="#{item.img}", alt="")
         .home-section__title.tp-heading--bigger.mx-auto= item.title
       else
         .home-section__title.tp-heading--monstrous.mx-auto= item.title
@@ -15,14 +20,30 @@ mixin homeSection(item)
           if item.subtitle2Line
             br
             span= item.subtitle2Line
+      if item.btn && isMobile
+        .home-section__btn-wrapper
+          a.btn.btn--secondary(href="#{item.btn.href}")= item.btn.text
       if item.text
         .home-section__text.mx-auto: p.tp-body--big= item.text
           block
       if item.scroller
-        .home-section__scroller.tp-text--center
-          .home-section__scroller-text.tp-body--base прокрутите вниз
-          .home-section__scroller-icon.mt-3
-            svg.icon: use(xlink:href="#arrow-down")/
-    if item.btn
+        if isMobile
+          .home-section__scroller.tp-text--center
+            a(href="#")
+              .home-section__scroller-icon
+                svg.icon: use(xlink:href="#elle")/
+              .home-section__scroller-text.tp-body--base Специальный проект
+        else
+          .home-section__scroller.tp-text--center
+            .home-section__scroller-text.tp-body--base прокрутите вниз
+            .home-section__scroller-icon.mt-3
+              svg.icon: use(xlink:href="#arrow-down")/
+    if item.btn && !isMobile
       .home-section__btn-wrapper
         a.btn.btn--secondary(href="#{item.btn.href}")= item.btn.text
+
+mixin homeSectionSlider(items)
+  .home-section__slider.owl-carousel.carousel--default
+    each item in items
+      .home-section__slide
+        +homeSection(item)

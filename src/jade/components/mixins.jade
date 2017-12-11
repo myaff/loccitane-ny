@@ -64,7 +64,9 @@ mixin gift-form(id, isInline)
   - var title = 'Оставьте свой email и получите промокод на подарок от L’Occitane!';
   - var placeholder = 'Ваш e-mail';
   - var btnText = 'Получить';
-  - var agreementText = 'Я согласен на обработку своих персональных данных';
+  - var agreementLink = isMobile ? '../build/assets/docs/agreement.pdf' : '../build/assets/docs/agreement.pdf';
+  - var agreementLinkText = 'персональных данных';
+  - var agreementText = 'Я согласен на обработку своих ';
   - var resultText1 = 'Спасибо!';
   - var resultText2 = 'Ваш подарок уже в пути!';
   .gift-form.js-form(class=isInline ? 'gift-form--inline' : '', id=id, data-page-type=layout)
@@ -82,6 +84,7 @@ mixin gift-form(id, isInline)
           label.field__label.field__label--check(for="#{id}-agreement")
             input.field__check(id="#{id}-agreement", type="checkbox", required)
             .field__label-text= agreementText
+              a(href=agreementLink, target="_blank")= agreementLinkText
       .gift-form__result.js-form-result
         .gift-form__result-text.tp-body--big.tp--uc: b #{resultText1} #{resultText2}
     else
@@ -94,6 +97,7 @@ mixin gift-form(id, isInline)
           label.field__label.field__label--check(for="#{id}-agreement")
             input.field__check(id="#{id}-agreement", type="checkbox", required)
             .field__label-text.tp-body--main= agreementText
+              a(href=agreementLink, target="_blank")= agreementLinkText
         .gift-form__btn: button.btn.js-form-submit= btnText
       .gift-form__result.js-form-result
         .gift-form__title.tp-body--big.tp--uc.mt-3.mb-6: b #{resultText1} <br> #{resultText2}

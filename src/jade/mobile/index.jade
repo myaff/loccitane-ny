@@ -10,8 +10,18 @@ block content
     section.section.section--1
       .section__content
         .section__content-inner
-          .grid-center-noBottom
-            .col-10
-              +homeSection(homeSectionsData[0])
-          button.btn.section__btn.js-modal(data-target="#wanna-gift") получить подарок
+          +homeSection(homeSectionsData[0])
       .section__bg
+        button.btn.section__btn.js-modal(data-target="#wanna-gift") получить подарок
+    section.section.section--2
+      .section__content
+        .section__content-inner
+          +homeSectionSlider([homeSectionsData[1],homeSectionsData[3]])
+      .section__bg
+        button.btn.section__btn.js-modal(data-target="#wanna-gift") получить подарок
+    section.section.section--3
+      .section__content
+        .section__content-inner
+          +homeSection(homeSectionsData[2])
+      .section__bg
+        button.btn.section__btn.js-modal(data-target="#wanna-gift") получить подарок

@@ -1,6 +1,6 @@
 .page {
   
-  &--home {
+  .layout--desktop &--home {
     height: 100vh;
     
     @media #{$xs-height} {
@@ -9,7 +9,7 @@
     }
   }
   
-  &--home .section {
+  .layout--desktop &--home .section {
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -62,6 +62,46 @@
     }
     &--3.active .section__btn {
       transition-delay: 1.7s;
+    }
+  }
+  .layout--mobile &--home .section {
+    &__content {
+      padding: 30px 20px 40px;
+      background: url('../img/home/m_bg-circle.jpg') top center no-repeat;
+      background-color: #fbfbfb;
+      background-size: contain;
+    }
+    &__bg {
+      padding-bottom: 87.5%;
+    }
+    @for $i from 1 through 5 {
+      &--#{$i} .section__bg {
+        background: url('../img/home/m_bg-#{$i}.jpg') center no-repeat;
+        background-size: cover;
+      }
+    }
+    &--2 .section__content {
+      background-position: top 30px center;
+    }
+    &__content-inner {
+      display: flex;
+      flex-flow: column nowrap;
+      //justify-content: space-between;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      
+      > .btn {
+        margin-top: 180px;        
+      }
+    }
+    &__btn {
+      @include absolute(top 40px left 50%);
+      transform: translateX(-50%);
+    }
+    &--3 .section__btn {
+      top: auto;
+      bottom: 80px;
     }
   }
 }

@@ -23,15 +23,20 @@ $modal-circle-bg: $color--primary;
   transform-origin: center center;
   transition: opacity 0.3s, transform 0.3s, z-index 0.1s 0.3s;
   
-  @media #{$flow-height} {
-    width: $modal-width / (1080px/16px*1rem) * 100vh;
+  .layout--desktop ~ .modal__wrapper & {
+    @media #{$flow-height} {
+      width: $modal-width / (1080px/16px*1rem) * 100vh;
+    }
+    
+    @media screen and (max-width: #{$modal-width + 3rem}) {
+      width: calc(100% - 3rem);
+      right: 1.5rem;
+      left: 1.5rem;
+      margin: 0;
+    }
   }
-  
-  @media screen and (max-width: #{$modal-width + 3rem}) {
-    width: calc(100% - 3rem);
-    right: 1.5rem;
-    left: 1.5rem;
-    margin: 0;
+  .layout--mobile ~ .modal__wrapper & {
+    width: calc(100% - 40px);
   }
   
   &__wrapper.is-fullscreen & {
@@ -157,10 +162,6 @@ $modal-circle-bg: $color--primary;
     @include absolute(top 0 left 50%);
     transform: translateX(-50%);
     z-index: $z-index--modal + 1;
-    
-    @media #{$xs} {
-      top: 3.13vw;
-    }
   }
   
   &__content {

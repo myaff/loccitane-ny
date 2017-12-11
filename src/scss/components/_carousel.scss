@@ -37,69 +37,27 @@ $dot-bg: #000000;
 
 .owl-nav {
   @include absolute(top 14vh left 50%);
-  @include size(32.5rem, 2.5rem);
+  @include size(100%, 2.5rem);
   display: flex;
   justify-content: space-between;
-  margin-left: -16.25rem;
-  
-  @media #{$xs-height} {
-    top: 6.5rem;
-  }
-  @media #{$xs} {
-    top: 75vw;
-    width: 96.88vw;
-    height: 12.5vw;
-    margin-left: -48.44vw;
-  }
+  transform: translateX(-50%);
 }
 .owl-prev,
 .owl-next {
-  @include circle(2.5rem, 50%);
+  @include size(2.5rem, 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   transition: opacity 0.2s;
+  padding: 10px;
+  color: $color--secondary;
   
-  @media #{$sm-height} {
-    @include size(2rem);
-  }
-  @media #{$xs} {
-    @include size(12.5vw);
-    &::before {
-      content: '';
-      display: block;
-      @include circle(10.5vw);
-      background: $body-bg--mobile;
-      @include absolute(top 1vw left 1vw);
-    }
-    &::after {
-      content: '';
-      @include circle(100%);
-      @include absolute(top 0 left 0);
-    }
+  .icon {
+    @include size(100%);
   }
   
   &.disabled {
-    opacity: 0.15;
+    opacity: 0.3;
     cursor: default!important;
-  }
-}
-@each $dir in (prev, next) {
-  .owl-#{$dir} {
-    &, &::after {
-      background-image: url('../img/arrow-#{$dir}.svg');
-      background-size: contain;
-    }
-  }
-}
-
-.carousel {
-  &--girls {
-    max-width: 35rem;
-    //margin: 5.9vh auto;
-    
-    @media #{$xs-height} {
-      margin: 0 auto 2rem;
-    }
   }
 }

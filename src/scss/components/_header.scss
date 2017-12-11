@@ -7,7 +7,7 @@
   background: $header-bg;
   color: $header-color;
   
-  .layout--home & {
+  .layout--desktop.layout--home & {
     width: 50%;
   }
   

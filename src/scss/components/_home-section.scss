@@ -34,6 +34,14 @@
       transform: translateY(0);
     }
   }
+  .layout--mobile &__title,
+  .layout--mobile &__subtitle,
+  .layout--mobile &__text,
+  .layout--mobile &__scroller,
+  .layout--mobile &__btn-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+  }
   
   &__title {
     transition-delay: 0.5s;
@@ -53,9 +61,13 @@
     @media #{$flow-height} {
       margin: 2.5vh 0 3.5vh;
     }
+    
+    .layout--mobile & {
+      line-height: 1.6;
+    }
   }
   
-  &__scroller {
+  .layout--desktop &__scroller {
     margin-top: 5rem;
     transition-delay: 1.1s;
     @media #{$flow-height} {
@@ -70,6 +82,22 @@
       @media #{$flow-height} {
         @include size(20px/1080px*100vh, 50px/1080px*100vh);
       }
+    }
+  }
+  .layout--mobile &__scroller {
+    margin-top: 220px;
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+    &-text {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+    &-icon .icon {
+      @include size(120px, 50px);
     }
   }
   
@@ -108,6 +136,49 @@
     }
   }
   
+  &__slider {
+    height: 840px;
+    padding-top: 20px;
+    overflow: hidden;
+    
+    .home-section {
+      min-height: initial;
+    }
+    .owl-stage-outer,
+    .owl-stage,
+    .owl-item {
+      height: 100%;
+    }
+    .owl-dots {
+      display: none;
+    }
+    .owl-nav {
+      top: -10px;
+      width: 260px;
+      align-items: center;
+      
+      &::before {
+        content: 'Листайте';
+        font-size: 22px;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color--secondary;
+      }
+      .owl-prev {
+        order: -1;
+      }
+      .owl-next {
+        order: 1;
+      }
+    }
+  }
+  &__slide,
+  &__slide &,
+  &__slide &__content {
+    height: 100%;
+  }
+  
   .section--1 &__title {
     margin-top: 16vh;
     font-size: 57px;
@@ -116,6 +187,10 @@
     @media #{$flow-height} {
       font-size: 57px/1080px*100vh;
     }
+    .layout--mobile & {
+      font-size: 60px;
+      margin-top: 220px;
+    }
   }
   .section--2 &__title,
   .section--4 &__title {
@@ -123,11 +198,38 @@
     @media #{$flow-height} {
       margin-top: -1vh;
     }
+    .layout--mobile & {
+      margin-top: 170px;
+      margin-bottom: 20px;
+    }
+  }
+  .section--2 &__img {
+    .layout--mobile & {
+      width: 115%;
+      margin: 100px -5% 0 -10%;
+    }
   }
   .section--5 &__title {
     margin-top: -1rem;
   }
   .section--3 &__title {
     margin-top: 10vh;
+    .layout--mobile & {
+      margin-top: 190px;
+    }
   }
+  .section--3 &__subtitle {
+    .layout--mobile & {
+      margin: 20px auto 45px;
+      max-width: 440px;
+      font-weight: 600;
+    }
+  }
+  .section--3 &__text {
+    .layout--mobile & {
+      margin-top: 200px;
+      max-width: 100%;
+    }
+  }
+  
 }

@@ -19,6 +19,8 @@ They might well be outsourced to an external stylesheet of course.
 -->
 
 <style type="text/css">
+	.svg-arr-next-dims { width: 20px; height: 20px; }
+	.svg-arr-prev-dims { width: 20px; height: 20px; }
 	.svg-arrow-down-dims { width: 12.52px; height: 30px; }
 	.svg-close-dims { width: 29.97px; height: 30px; }
 	.svg-elle-dims { width: 30px; height: 12.75px; }
@@ -49,6 +51,8 @@ for further details on how to create this embeddable sprite variant.
 -->
 
 <svg width="0" height="0" style="position:absolute">
+		<symbol viewBox="0 0 20 20" id="arr-next" xmlns="http://www.w3.org/2000/svg"><path d="M7.512 19.512l8.222-8.344c.312-.333.467-.723.467-1.168 0-.453-.156-.838-.467-1.155L7.512.488A1.556 1.556 0 0 0 6.363 0a1.49 1.49 0 0 0-1.137.488l-.947.962c-.32.308-.48.693-.48 1.155 0 .462.16.848.48 1.156L10.405 10 4.28 16.239c-.32.308-.48.693-.48 1.155 0 .453.16.843.48 1.168l.947.963c.311.316.69.475 1.136.475.446 0 .829-.163 1.149-.488z"/></symbol>
+		<symbol viewBox="0 0 20 20" id="arr-prev" xmlns="http://www.w3.org/2000/svg"><path d="M12.488 19.512l-8.222-8.344A1.657 1.657 0 0 1 3.798 10c0-.453.156-.838.467-1.155L12.487.488A1.56 1.56 0 0 1 13.637 0c.455 0 .833.163 1.137.488l.947.963c.32.308.48.693.48 1.155 0 .462-.161.848-.48 1.156L9.595 10l6.125 6.239c.32.308.48.693.48 1.155 0 .453-.161.843-.48 1.168l-.947.963c-.311.316-.69.475-1.136.475-.446 0-.829-.163-1.149-.488z"/></symbol>
 		<symbol viewBox="0 0 20.033 48.002" id="arrow-down" xmlns="http://www.w3.org/2000/svg"><path d="M8.619 1.385v41.887l-6.233-6.177a1.407 1.407 0 0 0-1.977 0 1.376 1.376 0 0 0 0 1.959l8.619 8.542a1.406 1.406 0 0 0 1.976 0l8.619-8.542a1.374 1.374 0 0 0 0-1.958 1.407 1.407 0 0 0-1.977 0l-6.233 6.177V1.385A1.39 1.39 0 0 0 10.017 0c-.772 0-1.398.62-1.398 1.385z"/></symbol>
 		<symbol viewBox="0 0 29.991 30.02" id="close" xmlns="http://www.w3.org/2000/svg"><path d="M17.648 15.01L29.441 3.204a1.878 1.878 0 0 0 0-2.655 1.874 1.874 0 0 0-2.652 0L14.996 12.355 3.202.55A1.874 1.874 0 0 0 .55.55a1.878 1.878 0 0 0 0 2.655L12.344 15.01.55 26.815a1.878 1.878 0 0 0 1.326 3.205 1.87 1.87 0 0 0 1.326-.55l11.794-11.805L26.79 29.469c.366.367.846.55 1.326.55s.96-.183 1.326-.55a1.878 1.878 0 0 0 0-2.655L17.648 15.01z"/></symbol>
 		<symbol viewBox="0 0 120 50.999" id="elle" xmlns="http://www.w3.org/2000/svg"><path d="M52.956 39.059c-.089 2.383-.181 4.847-1.137 6.896-1.07 2.478-3.551 3.887-7.586 4.31a13.35 13.35 0 0 1-1.808.001V.679h3.662V0H32.903l.003.686h3.601v49.579H32.86v.732h20.554V37.816h-.409l-.049 1.243zM87.771 39.059c-.088 2.383-.181 4.847-1.136 6.896-1.07 2.478-3.551 3.887-7.585 4.31-.057.008-.94.065-1.809.001V.679h3.663V0H67.719l.002.686h3.602v49.579h-3.647v.732H88.23V37.816h-.409l-.05 1.243zM20.095 39.094c-.089 2.383-.181 4.846-1.136 6.896-1.4 3.241-5 3.977-7.585 4.248-.057.008-.938.065-1.809.001V25.616c.832-.012 2.168.083 2.482.16 1.28.266 2.422 1.535 2.788 2.61.554 1.64.592 3.431.631 5.327l.025 1.068h.423V16.013h-.423l-.025 1.068c-.04 1.896-.077 3.688-.631 5.327-.417 1.228-1.615 2.337-2.785 2.58-.308.076-1.626.194-2.485.188V.781a13.537 13.537 0 0 1 1.804 0c2.687.282 6.179 1.302 7.589 4.569.957 2.052 1.049 4.515 1.138 6.898l.05 1.243h.388V.007L.043.006v.06l.002.661h3.501l.1.025v49.486H0v.752h20.554V37.851h-.409l-.05 1.243zM119.592 37.861l-.051 1.244c-.088 2.382-.18 4.846-1.135 6.896-1.4 3.242-5.001 3.977-7.586 4.248a13.35 13.35 0 0 1-1.808.001V25.628c.831-.012 2.169.083 2.482.16 1.28.265 2.421 1.535 2.787 2.609.554 1.64.593 3.43.631 5.326l.026 1.07.423-.001V16.023h-.423l-.026 1.069c-.038 1.896-.077 3.688-.631 5.326-.417 1.228-1.615 2.337-2.785 2.58-.307.075-1.626.193-2.485.188V.791a13.537 13.537 0 0 1 1.804 0c2.685.282 6.178 1.302 7.589 4.569.956 2.051 1.048 4.515 1.136 6.897l.051 1.244h.387V.018L99.49.017v.059l.002.661h3.501l.1.025v49.485h-3.647v.752H120V37.86l-.408.001z"/><path d="M83.688 20.836h2.264c.496 0 2.409.13 2.409 2.234 0 1.016-.569 2.092-2.663 2.221l3.002 3.817h-.969l-2.905-3.805h-.314v3.805h-.823v-8.272zm1.67 3.806c1.9 0 2.155-.91 2.155-1.572 0-1.371-.98-1.572-1.961-1.572h-1.041v3.144h.847zM95.805 20.836v5.188c0 .673-.072 3.321-3.002 3.321S89.8 26.698 89.8 26.024v-5.188h.823v5.306c0 .319.024 2.541 2.179 2.541s2.179-2.222 2.179-2.541v-5.306h.824z"/></symbol>
@@ -86,6 +90,28 @@ embedded above. They may be styled via CSS.
 			<h3>A) Inline SVG with embedded sprite</h3>
 			<ul>
 
+				<li title="arr-next">
+					<div class="icon-box">
+						
+						<!-- arr-next -->
+						<svg class="svg-arr-next-dims">
+							<use xlink:href="#arr-next"></use>
+						</svg>
+						
+					</div>
+					<h2>arr-next</h2>
+				</li>
+				<li title="arr-prev">
+					<div class="icon-box">
+						
+						<!-- arr-prev -->
+						<svg class="svg-arr-prev-dims">
+							<use xlink:href="#arr-prev"></use>
+						</svg>
+						
+					</div>
+					<h2>arr-prev</h2>
+				</li>
 				<li title="arrow-down">
 					<div class="icon-box">
 						
@@ -195,6 +221,28 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
 			<ul>
 				
+				<li title="arr-next">
+					<div class="icon-box">
+						
+						<!-- arr-next -->
+						<svg class="svg-arr-next-dims">
+							<use xlink:href="sprite.svg#arr-next"></use>
+						</svg>
+						
+					</div>
+					<h2>arr-next</h2>
+				</li>
+				<li title="arr-prev">
+					<div class="icon-box">
+						
+						<!-- arr-prev -->
+						<svg class="svg-arr-prev-dims">
+							<use xlink:href="sprite.svg#arr-prev"></use>
+						</svg>
+						
+					</div>
+					<h2>arr-prev</h2>
+				</li>
 				<li title="arrow-down">
 					<div class="icon-box">
 						
@@ -291,7 +339,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Sun, 10 Dec 2017 18:41:20 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+			<p>Generated at Mon, 11 Dec 2017 15:19:02 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>

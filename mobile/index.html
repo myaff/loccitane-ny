@@ -50,29 +50,76 @@
         <section class="section section--1">
           <div class="section__content">
             <div class="section__content-inner">
-              <div class="grid-center-noBottom">
-                <div class="col-10">
-                          <div class="home-section">
-                            <div class="home-section__content">
-                              <div class="home-section__title tp-heading--monstrous mx-auto">Волшебство начинается</div>
-                              <div class="home-section__subtitle tp-body--bigger-2 tp--uc mx-auto"><span>Чем порадовать близких?</span><br><span>Звездные пары о новогодних подарках</span>
-                              </div>
-                              <div class="home-section__scroller tp-text--center">
-                                <div class="home-section__scroller-text tp-body--base">прокрутите вниз</div>
-                                <div class="home-section__scroller-icon mt-3">
-                                  <svg class="icon">
-                                    <use xlink:href="#arrow-down">
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
+                      <div class="home-section">
+                        <div class="home-section__content">
+                          <div class="home-section__title tp-heading--monstrous mx-auto">Волшебство начинается</div>
+                          <div class="home-section__subtitle tp-body--bigger-2 tp--uc mx-auto"><span>Чем порадовать близких?</span><br><span>Звездные пары о новогодних подарках</span>
                           </div>
-                </div>
-              </div>
-              <button data-target="#wanna-gift" class="btn section__btn js-modal">получить подарок</button>
+                          <div class="home-section__scroller tp-text--center"><a href="#">
+                              <div class="home-section__scroller-icon">
+                                <svg class="icon">
+                                  <use xlink:href="#elle">
+                                </svg>
+                              </div>
+                              <div class="home-section__scroller-text tp-body--base">Специальный проект</div></a></div>
+                        </div>
+                      </div>
             </div>
           </div>
-          <div class="section__bg"></div>
+          <div class="section__bg">
+            <button data-target="#wanna-gift" class="btn section__btn js-modal">получить подарок</button>
+          </div>
+        </section>
+        <section class="section section--2">
+          <div class="section__content">
+            <div class="section__content-inner">
+                      <div class="home-section__slider owl-carousel carousel--default">
+                        <div class="home-section__slide">
+                                  <div class="home-section">
+                                    <div class="home-section__content">
+                                      <div class="home-section__img"><img src="../build/img/home/img-2.png" alt="">
+                                      </div>
+                                      <div class="home-section__title tp-heading--bigger mx-auto">Влад Соколовский и Рита Дакота, певцы, авторы песен</div>
+                                      <div class="home-section__btn-wrapper"><a href="vlad-i-rita.html" class="btn btn--secondary">Читать историю</a></div>
+                                    </div>
+                                  </div>
+                        </div>
+                        <div class="home-section__slide">
+                                  <div class="home-section">
+                                    <div class="home-section__content">
+                                      <div class="home-section__img"><img src="../build/img/home/img-4.png" alt="">
+                                      </div>
+                                      <div class="home-section__title tp-heading--bigger mx-auto">Владимир Вдовиченков и Елена Лядова, актеры театра и кино</div>
+                                      <div class="home-section__btn-wrapper"><a href="vladimir-i-elena.html" class="btn btn--secondary">Читать историю</a></div>
+                                    </div>
+                                  </div>
+                        </div>
+                      </div>
+            </div>
+          </div>
+          <div class="section__bg">
+            <button data-target="#wanna-gift" class="btn section__btn js-modal">получить подарок</button>
+          </div>
+        </section>
+        <section class="section section--3">
+          <div class="section__content">
+            <div class="section__content-inner">
+                      <div class="home-section">
+                        <div class="home-section__content">
+                          <div class="home-section__title tp-heading--monstrous mx-auto">Тест</div>
+                          <div class="home-section__subtitle tp-body--bigger-2 tp--uc mx-auto"><span>Что ваш новогодний подарок может рассказать о вас?</span>
+                          </div>
+                          <div class="home-section__btn-wrapper"><a href="test.html" class="btn btn--secondary">Пройти тест</a></div>
+                          <div class="home-section__text mx-auto">
+                            <p class="tp-body--big">Завернутые в нарядную бумагу и спрятанные под сверкающей огнями елкой наши подарки показывают, как мы любим и ценим близкого человека. Но они многое способны сообщить и о нас самих: о нашем характере, вкусах, привычках. Вы готовы узнать правду?</p>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+          </div>
+          <div class="section__bg">
+            <button data-target="#wanna-gift" class="btn section__btn js-modal">получить подарок</button>
+          </div>
         </section>
       </div>
     </div>
@@ -110,7 +157,7 @@
           </svg>
         </div>
         <div class="modal__content">
-          <div class="image-block"><img src="build/img/gift-popup.jpg" class="image-block__img"/></div>
+          <div class="image-block"><img src="../build/img/gift-popup.jpg" class="image-block__img"/></div>
           <div class="tp-text--center">
             <div id="modal-gift-form" data-page-type="home" class="gift-form js-form">
               <form class="gift-form__form js-form-form">
@@ -122,7 +169,7 @@
                 <div class="gift-form__agreement gift-form__field field">
                   <label for="modal-gift-form-agreement" class="field__label field__label--check">
                     <input id="modal-gift-form-agreement" type="checkbox" required="required" class="field__check"/>
-                    <div class="field__label-text tp-body--main">Я согласен на обработку своих персональных данных</div>
+                    <div class="field__label-text tp-body--main">Я согласен на обработку своих <a href="../build/assets/docs/agreement.pdf" target="_blank">персональных данных</a></div>
                   </label>
                 </div>
                 <div class="gift-form__btn">
