@@ -6,17 +6,20 @@
   justify-content: space-between;
   min-height: 60vh;
   
-  @media #{$sm-height} {
-    min-height: 63vh;
+  .layout--desktop & {
+    @media #{$sm-height} {
+      min-height: 63vh;
+    }
   }
   
   &__subtitle,
   &__text,
   &__img + &__title {
     max-width: 460px;
-    
-    @media #{$flow-height} {
-      max-width: 42.6vh;
+    .layout--desktop & {
+      @media #{$flow-height} {
+        max-width: 42.6vh;
+      }
     }
   }
   
@@ -58,8 +61,10 @@
     margin: 2rem 0 2.5rem;
     transition-delay: 0.8s;
     
-    @media #{$flow-height} {
-      margin: 2.5vh 0 3.5vh;
+    .layout--desktop & {
+      @media #{$flow-height} {
+        margin: 2.5vh 0 3.5vh;
+      }
     }
     
     .layout--mobile & {
@@ -118,8 +123,10 @@
       opacity: 0;
       transform: translateY(20%);
       transition: all 0.5s 0.3s;
-      @media #{$flow-height} {
-        max-height: 48vh;
+      .layout--desktop & {
+        @media #{$flow-height} {
+          max-height: 48vh;
+        }
       }
     }
     &--double img:first-of-type {
@@ -184,8 +191,10 @@
     font-size: 57px;
     line-height: 1.23;
     max-width: 750/1000*100vh;
-    @media #{$flow-height} {
-      font-size: 57px/1080px*100vh;
+    .layout--desktop & {
+      @media #{$flow-height} {
+        font-size: 57px/1080px*100vh;
+      }
     }
     .layout--mobile & {
       font-size: 60px;
@@ -195,11 +204,13 @@
   .section--2 &__title,
   .section--4 &__title {
     margin-top: -1rem;
-    @media #{$flow-height} {
-      margin-top: -1vh;
+    .layout--desktop & {
+      @media #{$flow-height} {
+        margin-top: -1vh;
+      }
     }
     .layout--mobile & {
-      margin-top: 170px;
+      margin-top: 130px;
       margin-bottom: 20px;
     }
   }

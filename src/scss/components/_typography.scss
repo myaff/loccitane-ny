@@ -266,7 +266,8 @@ a {
         font-size: $font-size--big/1080px*100vh;
       }
     }
-    .layout--mobile & {
+    .layout--mobile &,
+    .layout--mobile ~ .modal__wrapper & {
       font-size: 22px;
     }
   }

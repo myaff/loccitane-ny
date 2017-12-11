@@ -219,6 +219,9 @@ $checkbox-bg: $field-input-bg;
       }
     }
   }
+  .layout--mobile ~ .modal__wrapper &__form {
+    height: 300px;
+  }
   .is-submitted &__form {
     opacity: 0;
     transition: opacity 0.3s;
@@ -234,6 +237,9 @@ $checkbox-bg: $field-input-bg;
     @media #{$flow-height} {
       height: 200px/1080px*100vh;
     }
+  }
+  .layout--mobile ~ .modal__wrapper .is-submitted &__form {
+    height: 180px;
   }
   &__result {
     @include absolute(top 0 left 0);
