@@ -1,11 +1,19 @@
 .page {
-  .layout--test & {
+  .layout--desktop &--test,
+  .layout--desktop &--result {
     background: url('../img/test/bg.jpg') center no-repeat;
     background-size: cover;
     background-attachment: fixed;
   }
-  &--test,
-  &--result {
+  .layout--mobile &--test {
+    background: url('../img/test/m_bg.jpg') center no-repeat;
+    background-size: cover;
+  }
+  .layout--mobile &--result {
+    background: #ffffff;
+  }
+  .layout--desktop &--test,
+  .layout--desktop &--result {
     height: 100vh;
     padding: 100px 0 120px;
     display: flex;
@@ -15,10 +23,16 @@
       padding: 100px 0 120px/1080px*100vh;
     }
   }
-  
+  .layout--mobile &--test,
+  .layout--mobile &--result {
+    min-height: 100vh;
+  }
   &--test &__content,
   &--result &__content {
     background: #fff;
+  }
+  .layout--desktop &--test &__content,
+  .layout--desktop &--result &__content {
     padding: 50px 7.27% 90px;
     min-height: 720px;
     @media #{$flow-height} {
@@ -26,10 +40,32 @@
       min-height: 720px/1080px*100vh;
     }
   }
-  &--result &__content {
+  .layout--desktop &--result &__content {
     padding: 40px 7.27% 50px;
     @media #{$flow-height} {
       padding: 40px/1080px*100vh 7.27% 50px/1080px*100vh;
     }
+  }
+  .layout--mobile &--test &__header {
+    @include absolute(top 0 left 0);
+    @include size(100%);
+    background: #ffffff;
+    z-index: 2;
+    padding: 100px 2.5rem;
+  }
+  .layout--mobile &--test &__content {
+    padding: 50px 2.5rem 2.5rem;
+  }
+  .layout--mobile &--result &__content {
+    padding: 10px 0 80px;
+  }
+  .layout--mobile &--test &__subheading {
+    max-width: 400px;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    line-height: 1.59;
+  }
+  .layout--mobile &--test &__heading-text {
+    color: #9e9e9e;
   }
 }

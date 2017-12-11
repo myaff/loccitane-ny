@@ -12,7 +12,9 @@
   z-index: $z-index--modal - 10;
   
   @media #{$flow-height} {
-    @include size(90px/1080px*100vh);
+    .layout:not(.layout--mobile) & {
+      @include size(90px/1080px*100vh);
+    }
   }
   
   &::before {
@@ -40,6 +42,11 @@
   &__wrapper {
     line-height: 1;
     margin: -5px 0 -15px;
+    
+    .layout--mobile & {
+      order: -1;
+      margin: 0;
+    }
   }
   
   div {

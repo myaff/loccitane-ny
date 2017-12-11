@@ -42,12 +42,14 @@ $btn-dark-bg--hover: $btn-dark-bg;
   border: 1px solid $btn-border-color;
   transition: all .2s;
   
-  @media #{$flow-height} {
-    font-size: $font-size--bigger/1080px*100vh;
-  }
-  
-  @media #{$md} {
-    font-size: $font-size--bigger/1200px*100vw;
+  .layout--desktop & {
+    @media #{$flow-height} {
+      font-size: $font-size--bigger/1080px*100vh;
+    }
+    
+    @media #{$md} {
+      font-size: $font-size--bigger/1200px*100vw;
+    }
   }
   //@media #{$xs} {
   //  font-size: 7.5vw;

@@ -14,9 +14,16 @@
   .layout--test & {
     color: #fff;
   }
+  .layout--result & {
+    color: #002a5c;
+  }
   
-  @media #{$xs} {
-    padding: 3.13vw 3.13vw 21.88vw;
+  .layout--mobile & {
+    padding: 1.25rem;
+    height: 110px;
+    & + .page:not(.page--home) {
+      padding-top: 110px;
+    }
   }
   
   &__content {

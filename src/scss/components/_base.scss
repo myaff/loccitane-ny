@@ -62,8 +62,8 @@ body {
   @media #{$md-landing} {
     padding: 0 2.2vw;
   }
-  @media #{$xs} {
-    padding: 3.13vw;
+  .layout--mobile & {
+    padding: 0 1.25rem;
   }
 }
 

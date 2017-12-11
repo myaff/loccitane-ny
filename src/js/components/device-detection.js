@@ -14,6 +14,9 @@ function isTablet(){
 function isTouch(){
 	return 'ontouchstart' in window || navigator.maxTouchPoints;
 }
+function isMobileVersion(){
+  return !!~window.location.href.indexOf("/mobile/");
+}
 
 function run(){
 	if(isTouch()){
@@ -23,4 +26,4 @@ function run(){
 	}
 }
 
-module.exports = {run, isTouch, isMobile, isTablet};
+module.exports = {run, isTouch, isMobile, isTablet, isMobileVersion};

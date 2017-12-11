@@ -8,9 +8,18 @@
   &--result &__header {
     max-width: 87.23%;
     border-bottom: 1px solid #e1e1e1;
+    
+    .layout--mobile & {
+      max-width: 100%;
+    }
   }
   &--result &__heading {
     font-weight: 800;
+    
+    .layout--mobile & {
+      max-width: 480px;
+      margin: 0 auto;
+    }
   }
   &--result &__heading-text {
     margin: 1rem auto 2rem;
@@ -20,12 +29,15 @@
     }
   }
   
-  &--result &__body {
+  .layout--desktop &--result &__body {
     margin: 2rem auto;
     
     @media #{$flow-height} {
       margin: 2rem/67.5rem*100vh auto;
     }
+  }
+  .layout--mobile &--result &__body {
+    margin: 2.5rem 0;
   }
   
   &--result &__footer {
@@ -40,11 +52,19 @@
       @media #{$flow-height} {
         margin-top: 1rem/67.5rem*100vh;
       }
+      
+      .layout--mobile & {
+        flex: 0 0 100%;
+      }
     }
     
     img {
       @media #{$flow-height} {
         @include max-size(120/1080*100vh);
+      }
+      .layout--mobile & {
+        display: block;
+        @include max-size(140/640*100vw);
       }
     }
   }

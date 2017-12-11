@@ -1,0 +1,33 @@
+include ../components/mixins
+doctype html
+block page
+  - var isMobile = true;
+  html
+    head
+      title Loccitane New Year
+      include ../parts/favicon
+      meta(charset="UTF-8")
+      meta(name="viewport", content="width=640")
+      link(href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,600,700,800&amp;subset=cyrillic-ext", rel="stylesheet")
+      link(href="../build/css/main.css", rel="stylesheet")
+      script(src="../build/js/vendor/jquery-3.2.1.min.js")
+      script(src="../build/img/svg/sprite.js")
+    body
+      .svg-placeholder.hidden
+      script
+        | $('.svg-placeholder').html(SVG_SPRITE);
+      .layout.layout--mobile(class="layout--#{layout}")
+        include ../parts/header
+        block content
+      //-  include parts/footer
+      +modal('main-menu', 'modal--circle', false, false)
+        include ../components/nav
+        +social(false, true)
+      +modal('wanna-gift', 'rounded', true, false)
+        +image-block('build/img/gift-popup.jpg')
+        .tp-text--center
+          + gift-form('modal-gift-form')
+      
+      script(src="../build/js/vendor/owl.carousel.min.js")
+      script(src="../build/js/vendor/share.js")
+      script(src="../build/js/main.js")

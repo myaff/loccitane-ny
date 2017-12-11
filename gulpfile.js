@@ -45,7 +45,7 @@ const path = {
         svg: 'src/svg/*.svg',
         img: ['src/images/**/*.*', '!src/images/**/*-min.*', '!src/images/**/*.zip'],
         imgMin: 'src/images/**/*-min.*',
-        html: 'src/jade/*.jade'
+        html: 'src/jade/**/*.jade'
     },
     watch: {
         js: 'src/js/components/*.js',

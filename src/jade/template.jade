@@ -1,7 +1,7 @@
 include components/mixins
 doctype html
 block page
-  html(class=onepage ? 'enabled-onepage-scroll' : 'disabled-onepage-scroll')
+  html(class=onepage && !isMobile ? 'enabled-onepage-scroll' : 'disabled-onepage-scroll')
     head
       title Loccitane New Year
       include parts/favicon
@@ -16,7 +16,7 @@ block page
       .svg-placeholder.hidden
       script
         | $('.svg-placeholder').html(SVG_SPRITE);
-      .layout(class="layout--#{layout}")
+      .layout.layout--desktop(class="layout--#{layout}")
         include parts/header
         block content
       //-  include parts/footer

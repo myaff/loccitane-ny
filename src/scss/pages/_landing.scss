@@ -1,7 +1,10 @@
-.layout--landing {
+.layout--landing.layout--desktop {
   background: url('../img/bg-landing.jpg') top center repeat-y;
   background-size: contain;
   padding-top: $header-height;
+}
+.layout--mobile.layout--landing {
+  background: #fff;
 }
 .page {
   &--landing .container {
@@ -15,6 +18,12 @@
   }
   &--landing &__top-btn {
     @include absolute(top -0.5*$grid-gutter left 5rem);
+  }
+  .layout--mobile &--landing &__content {
+    padding: 25px 0 2.5rem;
+  }
+  .layout--mobile &--landing &__header {
+    margin-bottom: 100px;
   }
 }
 
@@ -36,6 +45,9 @@
   }
 }
 .page--landing .ve {
+  .layout--mobile & .tp-heading--huge {
+    font-size: 38px;
+  }
   &-10 {
     margin-top: 100px;
     @media #{$md-landing} {

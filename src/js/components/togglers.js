@@ -45,6 +45,10 @@ function toggleElementClassOnScroll(el, scrollValue = 0, toggledClass = 'scrolle
 function init(){
     
 	//toggleElementClassOnScroll($('.header'), $(window).outerHeight() / 3);
+  $('.js-hide-block').on('click', function(){
+    let block = $(this).data('target') === 'self' ? $(this).parent() : $(this).data('target');
+    block.fadeOut(500);
+  });
   
 }
 

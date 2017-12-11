@@ -1,0 +1,31 @@
+extends template
+
+prepend page
+  - var layout = 'test';
+  - var currentPage = 'test';
+
+block content
+  .page.page--test
+    .container
+      .page__content.rounded
+        .page__header.tp-text--center.rounded
+          .page__heading.tp-heading--monstrous Тест
+          .page__subheading.mt-4.tp-body--bigger-2.tp--uc Что ваш новогодний подарок может рассказать о вас?
+          .page__heading-text.my-8.tp-body--main Завернутые в нарядную бумагу и спрятанные под сверкающей огнями елкой наши подарки показывают, как мы любим и ценим близкого человека. Но они многое способны сообщить и о нас самих: о нашем характере, вкусах, привычках. Вы готовы узнать правду?
+          button.btn.btn--secondary.js-hide-block(data-target="self") Начать
+        .test__wrapper
+          .test__carousel.owl-carousel.carousel--test
+            each item in test
+              .test.tp-text--center
+                .test__title.tp-heading--bigger-2
+                  span= item.question
+                  if item.question2line
+                    span= item.question2line
+                .test__variants
+                  .grid-noBottom
+                    each variant, key in item.variants
+                      .col-6
+                        .test-variant.js-test-ctrl(data-key=key)
+                          .test-variant__ctrl
+                            svg.icon: use(xlink:href="#tick")
+                          .test-variant__text.tp-body--main.mt-3= variant

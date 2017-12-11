@@ -31,14 +31,15 @@ $nav-color--hover: $nav-color;
     padding: 1em;
     color: $nav-color;
     
-    @media #{$flow-height} {
-      font-size: $font-size--bigger-2/1080px*100vh;
+    .layout--desktop ~ .modal__wrapper & {
+      @media #{$flow-height} {
+        font-size: $font-size--bigger-2/1080px*100vh;
+      }
+    }
+    .layout--mobile ~ .modal__wrapper & {
+      font-size: 30px;
     }
     
-    @media #{$xs} {
-      padding: 7.5vw 0;
-      font-size: 9vw;
-    }
     
     &.disabled {
       opacity: 0.5;

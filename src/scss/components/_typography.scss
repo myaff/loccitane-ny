@@ -44,6 +44,9 @@ p {
         font-size: $font-size--huge/1080px*100vh;
       }
     }
+    .layout--mobile & {
+      font-size: 50px;
+    }
     
   }
   &--large-2 {
@@ -64,6 +67,9 @@ p {
         @media #{$flow-height} {
           font-size: $font-size--large-2/1080px*100vh;
         }
+      }
+      .layout--mobile & {
+        font-size: 40px;
       }
     }
   }
@@ -86,6 +92,9 @@ p {
           font-size: $font-size--large/1080px*100vh;
         }
       }
+      .layout--mobile & {
+        font-size: 35px;
+      }
     }
   }
   &--big {
@@ -103,6 +112,9 @@ p {
         @media #{$flow-height} {
           font-size: $font-size--big/1080px*100vh;
         }
+      }
+      .layout--mobile & {
+        font-size: 25px;
       }
     }
   }
@@ -145,6 +157,9 @@ p {
           font-size: $font-size--bigger-2/1080px*100vh;
         }
       }
+      .layout--mobile & {
+        font-size: 25px;
+      }
     }
   }
   &--medium {
@@ -185,6 +200,9 @@ p {
         font-size: $font-size--large/1080px*100vh;
       }
     }
+    .layout--mobile & {
+      font-size: 30px;
+    }
   }
   &--bigger-2 {
     font-size: $font-size--bigger-2;
@@ -200,6 +218,9 @@ p {
       @media #{$flow-height} {
         font-size: $font-size--bigger-2/1080px*100vh;
       }
+    }
+    .layout--mobile & {
+      font-size: 22px;
     }
   }
   &--bigger {
@@ -217,6 +238,9 @@ p {
       @media #{$flow-height} {
         font-size: $font-size--bigger/1080px*100vh;
       }
+    }
+    .layout--mobile & {
+      font-size: 22px;
     }
   }
   &--big {
@@ -253,6 +277,9 @@ p {
         font-size: $font-size--medium/1080px*100vh;
       }
     }
+    .layout--mobile & {
+      font-size: 22px;
+    }
   }
   &--base {
     font-size: $font-size--base;
@@ -286,6 +313,9 @@ p {
       @media #{$flow-height} {
         font-size: $font-size--main/1080px*100vh;
       }
+    }
+    .layout--mobile & {
+      font-size: 22px;
     }
   }
   &--small {
@@ -420,6 +450,9 @@ blockquote {
 }
 
 .image-block {
+  .layout--mobile & {
+    margin: 75px auto 20px;
+  }
   img {
     position: relative;
     max-width: 100%;
@@ -427,6 +460,16 @@ blockquote {
   }
   
   &--styled {
+    .layout--mobile & {
+      margin: 100px auto 40px;
+    }
+    img {
+      .layout--mobile & {
+        display: block;
+        max-width: 73.33%;
+        margin: 0 auto;
+      }
+    }
     &::before {
       content: '';
       display: block;
@@ -439,11 +482,24 @@ blockquote {
       background: url('../img/el-circle.jpg') top left no-repeat;
       background-size: contain;
       z-index: 0;
+      
+      .layout--mobile & {
+        width: 100vw;
+        background: url('../img/m_el-circle.jpg') top center no-repeat;
+        margin-top: -150px;
+        margin-left: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }
 .text-block {
   z-index: 1;
+  
+  .layout--mobile &--styled {
+    margin-left: 10%;
+  }
 }
 
 .page {
@@ -456,6 +512,14 @@ blockquote {
 .gift-block {
   z-index: 1;
   border: 1px solid $color--base;
+  
+  .layout--mobile & {
+    margin: 20px auto 50px;
+    width: 80%;
+  }
+  .layout--mobile .text-block + & {
+    margin-top: 120px;
+  }
   
   &__img {
     width: 65%;

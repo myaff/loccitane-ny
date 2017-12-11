@@ -7,6 +7,10 @@
     align-items: center;
     &.logo--loccitane {
       justify-content: flex-start;
+      
+      .layout--mobile & {
+        justify-content: flex-end;
+      }
     }
     &.logo--elle {
       justify-content: flex-end;
@@ -53,11 +57,13 @@
   &--loccitane .logo {
     @include size(13.75rem, 50px);
     
-    @media #{$flow-height} {
-      @include size(13.75rem/67.5rem*100vh, 50px);
-    }
-    @media #{$md} {
-      @include size(18vw, 4vw);
+    .layout:not(.layout--mobile) {
+      @media #{$flow-height} {
+        @include size(13.75rem/67.5rem*100vh, 50px);
+      }
+      @media #{$md} {
+        @include size(18vw, 4vw);
+      }
     }
   }
   &--elle .logo {

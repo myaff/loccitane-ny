@@ -12,7 +12,7 @@ mixin social(isInline, hasTitle)
 
 //- text block
 mixin text-block(title, isStyled, isCentered)
-  .text-block.mb-7(class=isCentered ? 'tp-text--center' : '')
+  .text-block.mb-7(class={'text-block--styled': isStyled, 'tp-text--center': isCentered})
     .tp-heading--large.mb-2= title
     if isStyled
       .tp-body--large.tp--accent
@@ -36,7 +36,10 @@ mixin gift(img, title, forWhom, link, btnTheme)
       .gift-block__text.tp-body--main.my-3
         block
     if link
-      .gift-block__btn.mt-3: a.btn.btn--medium(class=btnTheme ? "btn--" + btnTheme : '', href=link, target="_blank") Подробнее
+      if isMobile
+        .gift-block__btn.mt-3: a.btn(class=btnTheme ? "btn--" + btnTheme : '', href=link, target="_blank") Подробнее
+      else
+        .gift-block__btn.mt-3: a.btn.btn--medium(class=btnTheme ? "btn--" + btnTheme : '', href=link, target="_blank") Подробнее
 
 //- other story
 mixin story-block(img, title, link)
@@ -68,6 +71,8 @@ mixin gift-form(id, isInline)
     if isInline
       form.gift-form__form.js-form-form
         .gift-form__title.tp-heading--big.tp--uc.mb-2.tp-text--right= title
+        if isMobile
+          img.mb-3.mx-auto(src="../build/img/gift-contest.png", alt="")
         .gift-form__inline-field.ml-8
           .gift-form__field.field
             input.field__input.tp-text--left(id="#{id}-input", type="email", required)

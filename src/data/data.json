@@ -2,10 +2,10 @@
 "pages": [
   {"code": "home", "text": "Главная", "link": "index.html", "active": true},
   {"code": "vr", "text": "Рита + Влад", "link": "vlad-i-rita.html", "active": true},
-  {"code": "ve", "text": "Владимир + Елена", "link": "#", "active": false},
+  {"code": "ve", "text": "Владимир + Елена", "link": "vladimir-i-elena.html", "active": true},
   {"code": "ka", "text": "Кирилл + Александра", "link": "#", "active": false},
   {"code": "test", "text": "Тест", "link": "test.html", "active": true},
-  {"code": "gifts", "text": "Идеи подарков", "link": "#", "active": false}
+  {"code": "gifts", "text": "Идеи подарков", "link": "#", "active": true}
 ],
 "socials": [
   {"type": "fb", "text": "Facebook", "icon": "#facebook"},
@@ -20,7 +20,8 @@
     "subtitle2Line": "Звездные пары о новогодних подарках",
     "text": false,
     "btn": false,
-    "scroller": true
+    "scroller": true,
+    "type": "main"
   },
   {
     "img": "build/img/home/img-2_1.png",
@@ -32,7 +33,8 @@
       "href": "vlad-i-rita.html",
       "text": "Читать историю"
     },
-    "scroller": false
+    "scroller": false,
+    "type": "interview"
   },
   {
     "img": false,
@@ -43,7 +45,8 @@
       "href": "test.html",
       "text": "Пройти тест"
     },
-    "scroller": false
+    "scroller": false,
+    "type": "test"
   },
   {
     "img": "build/img/home/img-4_1.png",
@@ -55,7 +58,8 @@
       "href": "vladimir-i-elena.html",
       "text": "Читать историю"
     },
-    "scroller": false
+    "scroller": false,
+    "type": "interview"
   },
   {
     "img": "build/img/home/img-5.png",
@@ -66,7 +70,8 @@
       "href": "http://pubads.g.doubleclick.net/gampad/clk?id=4503665242&iu=/81006599/hmiru-elle/count",
       "text": "идеи подарков"
     },
-    "scroller": false
+    "scroller": false,
+    "type": false
   }
 ],
 "test": [

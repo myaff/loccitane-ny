@@ -23,6 +23,9 @@ function isLastSlide() {
 }
 function getPage(answer) {
   let pageUrl = window.location.origin + '/';
+  if(Main.DeviceDetection.isMobileVersion()) {
+    pageUrl += 'mobile/';
+  }
   pageUrl += pages[answer];
   return pageUrl;
 }

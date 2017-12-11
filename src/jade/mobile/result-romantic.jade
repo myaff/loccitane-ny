@@ -1,0 +1,26 @@
+extends template
+
+prepend page
+  - var layout = 'result';
+  - var currentPage = 'result';
+
+block content
+  .page.page--result
+    .container
+      .page__content.rounded
+        .page__header.tp-text--center
+          .page__heading.tp-heading--bigger-2= results.a.title
+          .page__heading-text.tp-body--main: p= results.a.text
+          .page__socials
+            +social(true)
+        .page__body.advice.tp-text--center
+          .advice__info
+            .advice__title.tp-heading--large-2.mb-5 Совет:
+            .advice__text.tp-body--main.my-5: p= results.a.advice.text
+          .advice__img.my-4
+            img(src='../' + results.a.advice.img)
+          .advice__btn.mt-5: a.btn(href=results.a.advice.link, target="_blank") время выбирать подарки
+        .page__footer
+          +gift-form('result-gift-form', true)
+          unless isMobile
+            img.ml-4(src="../build/img/gift-contest.png", alt="")

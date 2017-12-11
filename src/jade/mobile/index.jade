@@ -1,0 +1,17 @@
+extends template
+
+prepend page
+  - var layout = 'home';
+  - var currentPage = 'home';
+
+block content
+  .page.page--home
+    include ../components/home-section
+    section.section.section--1
+      .section__content
+        .section__content-inner
+          .grid-center-noBottom
+            .col-10
+              +homeSection(homeSectionsData[0])
+          button.btn.section__btn.js-modal(data-target="#wanna-gift") получить подарок
+      .section__bg

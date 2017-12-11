@@ -1,13 +1,20 @@
 $test-dot-default: #d4d4d4;
 $test-dot-active: $color--primary;
 .test {
+  
   min-height: 360px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: stretch;
-  @media #{$flow-height} {
-    min-height: 360px/1080px*100vh;
+  .layout--desktop & {
+    @media #{$flow-height} {
+      min-height: 360px/1080px*100vh;
+    }
+  }
+  .layout--mobile & {
+    min-height: 730px;
+    justify-content: space-between;
   }
   
   &__carousel {
@@ -20,6 +27,7 @@ $test-dot-active: $color--primary;
     }
     .owl-dot {
       @include circle(1.25rem, 50%);
+      flex-basis: 0 0 1.25rem;
       background: $test-dot-active;
       overflow: visible;
       opacity: 1;
@@ -27,6 +35,8 @@ $test-dot-active: $color--primary;
       margin: 0 30px;
       padding: 0;
       pointer-events: none;
+      
+      @include null-first-last-margin();
       
       &.active {
         background: $test-dot-active;
@@ -49,14 +59,34 @@ $test-dot-active: $color--primary;
   }
   &__title {
     font-weight: 800;
+    
+    .layout--mobile & {
+      margin: 1.5rem;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      flex: 1 1 auto;
+    }
+  }
+  &__variants {
+    .layout--mobile & {
+      min-height: 500px;
+    }
   }
 }
 
 .test-variant {
   min-height: 210px;
   cursor: pointer;
-  @media #{$flow-height} {
-    min-height: 210px/1080px*100vh;
+  .layout--esktop {
+    @media #{$flow-height} {
+      min-height: 210px/1080px*100vh;
+    }
+  }
+  .layout--mobile & {
+    min-height: 130px;
+    margin-bottom: 2.5rem;
   }
   
   &__ctrl {
