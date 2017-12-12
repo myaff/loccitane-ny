@@ -19,11 +19,21 @@
   }
   
   .layout--mobile & {
+    position: fixed;
+    z-index: 100;
     padding: 1.25rem;
     height: 110px;
+    transition: background .3s;
+    &.scrolled {
+      background: #fff;
+    }
     & + .page:not(.page--home) {
       padding-top: 110px;
     }
+  }
+  .layout--mobile.modal-open & {
+    background: transparent;
+    z-index: 999;
   }
   
   &__content {

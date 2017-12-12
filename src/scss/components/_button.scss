@@ -42,7 +42,8 @@ $btn-dark-bg--hover: $btn-dark-bg;
   border: 1px solid $btn-border-color;
   transition: all .2s;
   
-  .layout--desktop & {
+  .layout--desktop &,
+  .layout--desktop ~ .modal__wrapper & {
     @media #{$flow-height} {
       font-size: $font-size--bigger/1080px*100vh;
     }

@@ -60,7 +60,8 @@ $checkbox-bg: $field-input-bg;
       text-align: left;
     }
     
-    .layout--desktop {
+    .layout--desktop &,
+    .layout--desktop ~ .modal__wrapper & {
       @media #{$flow-height} {
         font-size: $font-size--big/1080px*100vh;
       }
@@ -87,9 +88,10 @@ $checkbox-bg: $field-input-bg;
     font-size: $font-size--base;
     color: $field-text-color;
     
-    .layout--desktop {
+    .layout--desktop &,
+    .layout--desktop ~ .modal__wrapper & {
       @media #{$flow-height} {
-        font-size: $font-size--base/1080px*100vh;
+        font-size: 20px/1080px*100vh;
       }
     }
   }
@@ -97,7 +99,8 @@ $checkbox-bg: $field-input-bg;
   &__label--check &__label-text {
     padding-left: $checkbox-size + 1rem;
     
-    .layout--desktop {
+    .layout--desktop &,
+    .layout--desktop ~ .modal__wrapper & {
       @media #{$flow-height} {
         padding-left: ($checkbox-size + 1rem)/(1080px/16px*1rem)*100vh;
       }
@@ -117,7 +120,8 @@ $checkbox-bg: $field-input-bg;
       @include absolute(top 0 left 0);
       cursor: pointer;
       
-      .layout--desktop {
+      .layout--desktop &,
+      .layout--desktop ~ .modal__wrapper & {
         @media #{$flow-height} {
           @include size($checkbox-size/(1080px/16px*1rem)*100vh);
         }
@@ -134,8 +138,7 @@ $checkbox-bg: $field-input-bg;
     }
     
     &::after {
-      //background: url('../img/tick.png') center no-repeat;
-      content: '\1F5F8';
+      background: url('../img/tick.png') center no-repeat;
       text-align: center;
       font-size: 2em;
       line-height: 0.75;
@@ -159,6 +162,11 @@ $checkbox-bg: $field-input-bg;
     max-width: 400px;
     letter-spacing: 0.05em;
     margin: 0 auto;
+  }
+  .layout--desktop ~ .modal__wrapper .modal &__title {
+    @media #{$flow-height} {
+      margin: 1.48vh auto!important;
+    }
   }
   .layout--mobile &__title {
     letter-spacing: initial;

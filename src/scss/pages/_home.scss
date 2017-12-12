@@ -74,11 +74,15 @@
     &__bg {
       padding-bottom: 87.5%;
     }
-    @for $i from 1 through 5 {
+    @for $i from 1 through 2 {
       &--#{$i} .section__bg {
         background: url('../img/home/m_bg-#{$i}.jpg') center no-repeat;
         background-size: cover;
       }
+    }
+    &--1 .section__content {
+      height: 100vh;
+      background-position: center;
     }
     &--2 .section__content {
       background-position: top 30px center;
@@ -102,6 +106,9 @@
     &--3 .section__btn {
       top: auto;
       bottom: 80px;
+    }
+    &--3 .section__bg {
+      display: none;
     }
   }
 }

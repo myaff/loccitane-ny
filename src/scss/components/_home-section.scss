@@ -6,6 +6,10 @@
   justify-content: space-between;
   min-height: 60vh;
   
+  .layout--mobile & {
+    min-height: 80vh;
+  }
+  
   .layout--desktop & {
     @media #{$sm-height} {
       min-height: 63vh;

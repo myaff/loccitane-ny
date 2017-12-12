@@ -4,4 +4,4 @@ nav.nav.tp-text--center
     each page in pages
       if currentPage !== page.code && page.active
         li.nav__item
-          a.nav__link(class=page.active ? '' : 'disabled', href=page.link)= page.text
+          a.nav__link(class=page.active ? '' : 'disabled', href=page.link, target=page.code === 'gifts'? '__blank' : '_self')= page.text
